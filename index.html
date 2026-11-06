@@ -154,7 +154,7 @@ a{color:inherit}
 <nav class="nav" data-b="nav.bar">
 <div class="wrap">
 <span class="mark">HS</span>
-<div class="links"><a href="#about">About</a><a href="#work">Work</a><a href="#tools">Tools</a><a href="#contact">Contact</a></div>
+<div class="links"><a href="#about">About</a><a href="#work">Work</a><a href="#tools">Tools</a><a href="#contact">Contact</a><a href="https://www.linkedin.com/in/hasan-sweilam-86a476249/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
 <span class="avail"><i></i><span class="hide-sm">Open to overflow work</span></span>
 </div>
 </nav>
@@ -286,6 +286,7 @@ a{color:inherit}
 <div data-b="contact.title" id="contactTitle"><span class="eyebrow">// 09 · Direct connect</span><h2>Let's build your next site plan.</h2></div>
 <p data-b="contact.text">Available for site-plan overflow work: grading, stormwater, utilities and full CD sets, delivered remotely.</p>
 <div class="email-row" data-b="contact.email"><span class="email" id="email">Hasansweilam@gmail.com</span><button class="btn primary" id="copy" type="button">Copy email</button></div>
+<div class="email-row" data-b="contact.links"><span class="email" id="phone">+20 101 005 5662</span><button class="btn" id="copyPhone" type="button">Copy number</button><a class="btn primary" href="https://www.linkedin.com/in/hasan-sweilam-86a476249/" target="_blank" rel="noopener">LinkedIn profile ↗</a></div>
 <div class="foot" data-b="contact.foot">Hasan Mohamed Sweilam · Ismailia, Egypt · Working in US time zones</div>
 </div>
 </section>
@@ -436,6 +437,7 @@ try { await navigator.clipboard.writeText(txt); $('copy').textContent = 'Copied'
 catch { const s = getSelection(), rg = document.createRange(); rg.selectNodeContents($('email')); s.removeAllRanges(); s.addRange(rg); $('copy').textContent = 'Selected, press Ctrl+C'; }
 setTimeout(() => $('copy').textContent = 'Copy email', 2000);
 });
+$('copyPhone').addEventListener('click', async () => { const t = $('phone').textContent.trim(); try { await navigator.clipboard.writeText(t); $('copyPhone').textContent = 'Copied'; } catch { const s = getSelection(), rg = document.createRange(); rg.selectNodeContents($('phone')); s.removeAllRanges(); s.addRange(rg); $('copyPhone').textContent = 'Selected, press Ctrl+C'; } setTimeout(() => $('copyPhone').textContent = 'Copy number', 2000); });
 const cv = $('contours');
 function draw() {
 const p = cv.parentElement, dpr = devicePixelRatio || 1;
