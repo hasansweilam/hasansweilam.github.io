@@ -3,471 +3,480 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Hasan Sweilam: Civil Engineer and Civil 3D Designer. Site, grading, stormwater and utility plan sets.">
+<meta name="description" content="Hasan Sweilam, civil engineer and Civil 3D site designer: site, grading, stormwater, erosion control and utility plan sets for US projects.">
+<meta property="og:title" content="Hasan Sweilam · From points to plans">
+<meta property="og:description" content="Civil 3D site design portfolio: site, grading, stormwater and utility plan sets.">
+<meta property="og:url" content="https://hasansweilam.github.io/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Hasan Sweilam Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Playfair+Display:wght@700;900&display=swap">
 <style>
 :root{
---bg:#0e0b0c; --panel:#171214; --panel-2:#1f191b; --line:#2e2528;
---fg:#f0e9e6; --muted:#a3968f; --red:#e5383b; --red-deep:#7d1a1f; --agent:#36b6ff;
---f-display:"Anton",Impact,"Arial Narrow",sans-serif;
---f-script:"Caveat","Brush Script MT",cursive;
+--bg:#000000; --ink:#f4ede3; --muted:#a49d94; --amber:#ffb45f; --amber-2:#ffd9a0; --cyan:#46d0ff; --green:#7ee08a; --blue:#6a8cff; --red:#ff5a46;
+--glass:rgba(7,8,10,0.66); --line:rgba(244,237,227,0.14);
+--f-display:"Playfair Display",Georgia,"Times New Roman",serif;
 --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
 --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
 color-scheme:dark;
 }
-html{background:var(--bg)}
-body{
-position:relative; overflow-x:hidden; color:var(--fg); font-family:var(--f-body); font-size:15px; line-height:1.6;
-background:var(--bg);
-background-image:radial-gradient(60rem 40rem at 70% 8rem, rgba(229,56,59,.13), transparent 70%),
-radial-gradient(40rem 30rem at 10% 60%, rgba(229,56,59,.06), transparent 70%);
-}
+html{background:var(--bg);scroll-behavior:auto}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;overflow-x:hidden;
+background-image:radial-gradient(70rem 50rem at 75% 30%, rgba(255,180,95,.07), transparent 70%)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
-.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+#gl{position:fixed;inset:0;width:100%;height:100%;display:block;z-index:0}
+.grain{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at 30% 60%, rgba(0,0,0,.55), transparent 60%)}
 h1,h2,h3{margin:0;text-wrap:balance}
 p{margin:0}
 a{color:inherit}
-:focus-visible{outline:2px solid var(--agent);outline-offset:3px}
-.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:rgba(14,11,12,.86);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.nav .wrap{display:flex;align-items:center;gap:20px;padding-block:12px}
-.mark{display:grid;place-items:center;width:30px;height:30px;background:var(--red);color:#fff;font:600 12px var(--f-mono);letter-spacing:.04em}
-.links{display:flex;gap:18px;font:500 12px var(--f-mono);text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
-.links a{text-decoration:none}.links a:hover{color:var(--fg)}
-.avail{margin-left:auto;display:flex;align-items:center;gap:8px;font:500 11px var(--f-mono);color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
-.avail i{width:7px;height:7px;border-radius:50%;background:#4fd67a;box-shadow:0 0 8px #4fd67a}
-.eyebrow{font:600 11px var(--f-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
-.sec{padding-block:72px;border-top:1px solid var(--line)}
-.sec-head{display:grid;gap:10px;margin-bottom:36px}
-.sec-head h2{font:700 clamp(26px,3.4vw,38px)/1.15 var(--f-body);letter-spacing:-.01em}
-.sec-head p{color:var(--muted);max-width:60ch}
-.index{font:500 11px var(--f-mono);color:var(--muted);letter-spacing:.08em}
-.chip{display:inline-block;font:500 11px var(--f-mono);padding:3px 8px;border:1px solid var(--line);color:var(--muted);background:var(--panel)}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.hud{position:fixed;z-index:20;pointer-events:none;font:500 12px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:rgba(244,237,227,.7)}
+.hud a,.hud button{pointer-events:auto}
+.hud-top{top:calc(18px + env(safe-area-inset-top,0px));left:max(18px,env(safe-area-inset-left,0px));right:max(18px,env(safe-area-inset-right,0px));display:flex;align-items:center;gap:18px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.brand i{display:grid;place-items:center;width:34px;height:34px;background:var(--amber);color:#140c04;font:600 13px var(--f-mono);font-style:normal;letter-spacing:.04em}
+.brand b{font:700 15px/1.05 var(--f-display);letter-spacing:.06em}
+.nav{margin-left:auto;display:flex;gap:4px;padding:5px;border:1px solid var(--line);background:rgba(7,8,10,.55);backdrop-filter:blur(10px);border-radius:999px}
+.nav a{text-decoration:none;padding:7px 12px;border-radius:999px;color:rgba(244,237,227,.72)}
+.nav a.on,.nav a:hover{background:rgba(244,237,227,.1);color:var(--ink)}
+.hire{pointer-events:auto;text-decoration:none;background:var(--ink);color:#0b0907;padding:10px 16px;border-radius:999px;font-weight:600;letter-spacing:.08em}
+.chap{font:900 44px/1 var(--f-display);letter-spacing:0;text-transform:none;color:var(--ink)}
+.ticks{display:flex;gap:8px}
+.ticks button{border:0;padding:0;width:40px;height:16px;background:none;cursor:pointer;position:relative}
+.ticks button::after{content:"";position:absolute;left:0;right:0;top:7px;height:3px;background:rgba(244,237,227,.22)}
+.ticks button.on::after{background:var(--amber)}
+.hud-br{right:max(24px,env(safe-area-inset-right,0px));bottom:calc(22px + env(safe-area-inset-bottom,0px));text-align:right;display:grid;gap:8px;justify-items:end}
+.hud-br .live{color:var(--amber-2)}
+.corner{position:fixed;z-index:2;width:26px;height:26px;border-color:rgba(244,237,227,.32);pointer-events:none}
+.c1{top:calc(10px + env(safe-area-inset-top,0px));left:10px;border-top:1.5px solid;border-left:1.5px solid}
+.c2{top:calc(10px + env(safe-area-inset-top,0px));right:10px;border-top:1.5px solid;border-right:1.5px solid}
+.c3{bottom:calc(10px + env(safe-area-inset-bottom,0px));left:10px;border-bottom:1.5px solid;border-left:1.5px solid}
+.c4{bottom:calc(10px + env(safe-area-inset-bottom,0px));right:10px;border-bottom:1.5px solid;border-right:1.5px solid}
+.xhair{position:fixed;left:0;top:0;z-index:50;pointer-events:none;display:none;visibility:hidden}
+.xhair.on{visibility:visible}
+.xhair::before,.xhair::after{content:"";position:absolute;background:rgba(244,237,227,.9)}
+.xhair::before{left:-26px;top:-0.5px;width:52px;height:1px}
+.xhair::after{top:-26px;left:-0.5px;height:52px;width:1px}
+.xhair i{position:absolute;left:-5px;top:-5px;width:10px;height:10px;border:1px solid rgba(244,237,227,.95)}
+.xhair span{position:absolute;left:16px;top:12px;white-space:nowrap;font:500 11px var(--f-mono);color:var(--amber-2);background:rgba(5,6,8,.78);padding:3px 7px;border:1px solid rgba(255,180,95,.35)}
+@media (hover:hover) and (pointer:fine){ body.cad, body.cad a, body.cad button{cursor:none} body.cad .xhair{display:block} }
+main{position:relative;z-index:5}
+.sec{min-height:100vh;display:flex;align-items:center;padding-block:16vh;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sec.tall{min-height:130vh}
+.panel{width:min(640px,100%);margin-left:clamp(0px,5vw,90px);background:var(--glass);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);border:1px solid var(--line);padding:clamp(22px,3vw,40px);display:grid;gap:18px;position:relative}
+.panel::before{content:"";position:absolute;left:-1px;top:-1px;width:18px;height:18px;border-left:2px solid var(--amber);border-top:2px solid var(--amber)}
+.panel.wide{width:min(980px,100%)}
+.kick{font:600 12px var(--f-mono);letter-spacing:.2em;text-transform:uppercase;color:var(--amber)}
+.idx{font:500 12px var(--f-mono);letter-spacing:.12em;color:var(--muted)}
+h2{font:900 clamp(34px,4.4vw,58px)/1.02 var(--f-display)}
+.lede{color:rgba(244,237,227,.82);font-size:17px;max-width:58ch}
+.lede b{color:var(--ink);font-weight:600}
+.hero{min-height:100vh;padding-top:22vh}
+.hero h1{font:900 clamp(54px,9vw,132px)/.92 var(--f-display);letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:transparent;-webkit-text-stroke:1.5px var(--amber)}
+.hero .panel{background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;border:0;padding:0;width:min(820px,100%)}
+.hero .panel::before{display:none}
+.ctas{display:flex;flex-wrap:wrap;gap:10px}
+.btn{font:600 13px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:14px 20px;border:1px solid rgba(244,237,227,.35);color:var(--ink);background:rgba(7,8,10,.4);cursor:pointer;border-radius:999px}
+.btn.solid{background:var(--amber);border-color:var(--amber);color:#140c04}
+.btn:hover{border-color:var(--amber)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;max-width:680px;margin-top:6px}
+.stat b{display:block;font:900 40px/1 var(--f-display);color:var(--amber-2)}
+.stat span{display:block;margin-top:6px;font:500 11px/1.45 var(--f-mono);letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+.scrollhint{font:500 11px var(--f-mono);letter-spacing:.2em;color:var(--muted);text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.scrollhint::before{content:"";width:1px;height:34px;background:linear-gradient(var(--amber),transparent)}
+.reel{border:1px solid var(--line);background:#000;aspect-ratio:16/9;width:100%;max-width:100%;overflow:hidden}
+.reel video{width:100%;height:100%;display:block;object-fit:cover}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.card{border:1px solid var(--line);background:rgba(244,237,227,.03);padding:16px;display:grid;gap:6px;align-content:start;min-width:0}
+.card b{font-weight:600;font-size:15px}
+.card span{color:var(--muted);font-size:13.5px;line-height:1.5}
+.card .tag{font:600 10px var(--f-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--amber)}
+.card .where{font:500 11px var(--f-mono);color:var(--muted)}
+.tl{display:grid}
+.job{display:grid;grid-template-columns:150px minmax(0,1fr);gap:18px;padding:16px 0;border-top:1px solid var(--line)}
+.job .when{font:500 12px var(--f-mono);color:var(--muted)}
+.job h3{font-size:17px;font-weight:600}
+.job .org{font:600 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin:3px 0 6px}
+.job p{color:var(--muted);font-size:14.5px}
+.steps{display:grid;gap:0}
+.step{display:grid;grid-template-columns:56px minmax(0,1fr);gap:14px;padding:14px 0;border-top:1px solid var(--line)}
+.step em{font:900 30px/1 var(--f-display);font-style:normal;color:var(--amber-2)}
+.step b{display:block;font-weight:600}
+.step span{color:var(--muted);font-size:14px}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
-.hero{padding-block:40px 64px;overflow:hidden}
-.wordmark{font:400 clamp(56px,14vw,184px)/.9 var(--f-display);letter-spacing:.01em;color:transparent;-webkit-text-stroke:2px var(--red);text-transform:uppercase;white-space:nowrap}
-.hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;margin-top:-6px}
-.hello{font:700 clamp(30px,4vw,44px)/1 var(--f-script);color:var(--fg);transform:rotate(-3deg);transform-origin:left}
-.name{display:inline-block;margin-top:6px;background:var(--red);color:#fff;font:400 clamp(44px,6vw,72px)/1 var(--f-display);padding:6px 16px 4px;letter-spacing:.02em}
-.role{display:flex;align-items:center;gap:10px;margin-top:18px;font:600 12px var(--f-mono);letter-spacing:.14em;text-transform:uppercase}
-.role::before{content:"";width:7px;height:7px;background:var(--red)}
-.lede{margin-top:16px;max-width:52ch;color:var(--muted);font-size:16px}
-.lede b{color:var(--fg);font-weight:600}
-.ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
-.btn{font:600 12px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:11px 16px;border:1px solid var(--line);background:var(--panel);color:var(--fg);cursor:pointer}
-.btn.primary{background:var(--red);border-color:var(--red);color:#fff}
-.btn:hover{border-color:var(--red)}
-.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:30px;max-width:640px}
-.stat b{display:block;font:400 34px/1 var(--f-display);color:var(--red)}
-.stat span{display:block;margin-top:6px;font:500 11px/1.45 var(--f-mono);color:var(--muted);letter-spacing:.04em}
-.hero-side{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;align-content:start}
-.plate{grid-column:1/-1;position:relative;background:var(--red);aspect-ratio:16/10;max-width:100%;overflow:hidden}
-.plate canvas{position:absolute;inset:0;width:100%;height:100%}
-.plate .mono{position:absolute;left:16px;bottom:12px;font:400 64px/1 var(--f-display);color:#16090a;letter-spacing:.02em}
-.plate .cap{position:absolute;right:12px;bottom:12px;font:600 10px var(--f-mono);color:#16090a;letter-spacing:.1em;text-transform:uppercase;text-align:right}
-.mini{background:var(--panel);border:1px solid var(--line);padding:14px;display:grid;gap:4px;min-width:0}
-.mini small{font:600 10px var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
-.mini strong{font-weight:600;font-size:14px}
-.mini span{color:var(--muted);font-size:13px;line-height:1.45}
-.about{display:grid;grid-template-columns:1.5fr 1fr;gap:48px}
-.about-text{display:grid;gap:16px;max-width:64ch;color:var(--muted);font-size:16px}
-.about-text b{color:var(--fg);font-weight:600}
-.quote{border-left:3px solid var(--red);padding:4px 0 4px 18px;color:var(--fg);font-size:18px;font-weight:500;max-width:56ch}
-.pillars{display:grid;gap:12px;align-content:start}
-.pillar{padding:14px 0;border-bottom:1px solid var(--line);display:grid;gap:4px}
-.pillar strong{font-size:14px}
-.pillar span{color:var(--muted);font-size:13px}
-.timeline{display:grid;gap:0}
-.job{display:grid;grid-template-columns:180px minmax(0,1fr);gap:24px;padding:22px 0;border-bottom:1px solid var(--line)}
-.job .when{font:500 12px var(--f-mono);color:var(--muted);letter-spacing:.04em}
-.job h3{font-size:18px;font-weight:600}
-.job .org{color:var(--red);font:600 12px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;margin:4px 0 8px}
-.job p{color:var(--muted);max-width:70ch}
-.projects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.proj{background:var(--panel);border:1px solid var(--line);padding:20px;display:grid;gap:10px;align-content:start;min-width:0}
-.proj .tag{font:600 10px var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
-.proj h3{font-size:17px;font-weight:600;line-height:1.3}
-.proj p{color:var(--muted);font-size:13.5px}
-.proj .where{font:500 11px var(--f-mono);color:var(--muted);margin-top:4px}
-.services{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.svc{border:1px solid var(--line);background:var(--panel);padding:18px;display:grid;gap:6px;align-content:start;min-width:0}
-.svc b{font-size:15px;font-weight:600}
-.svc span{color:var(--muted);font-size:13px;line-height:1.5}
-.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px;border-top:2px solid var(--red)}
-.step{padding-top:18px;display:grid;gap:6px;align-content:start;min-width:0}
-.step em{font:400 32px/1 var(--f-display);color:var(--red);font-style:normal}
-.step b{font-size:15px;font-weight:600}
-.step span{color:var(--muted);font-size:13px;line-height:1.5}
-.cov{display:grid;gap:26px}
-.covgrp{display:grid;gap:10px}
-.covgrp small{font:600 10px var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
-.chip.big{font-size:12px;padding:6px 10px;color:var(--fg)}
-.tools{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.tool{border:1px solid var(--line);padding:18px;display:grid;gap:8px;align-content:start;background:linear-gradient(180deg,var(--panel-2),var(--panel));min-width:0}
-.tool .lvl{font:500 11px var(--f-mono);color:var(--muted)}
-.tool h3{font:400 24px/1 var(--f-display);letter-spacing:.02em}
-.tool ul{margin:0;padding:0;list-style:none;display:grid;gap:4px;color:var(--muted);font-size:13px}
-.tool li::before{content:"— ";color:var(--red)}
-.contact{text-align:center;padding-block:96px 140px;border-top:1px solid var(--line)}
-.contact h2{font:700 clamp(30px,5vw,54px)/1.1 var(--f-body);letter-spacing:-.02em;margin-top:10px}
-.contact p{color:var(--muted);max-width:56ch;margin:14px auto 0}
-.email-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px;margin-top:26px}
-.email{font:600 15px var(--f-mono);user-select:all;padding:11px 14px;border:1px solid var(--line);background:var(--panel);overflow-wrap:anywhere}
-.foot{margin-top:40px;font:500 11px var(--f-mono);color:var(--muted);letter-spacing:.06em}
-#layer{position:absolute;left:0;top:0;width:100%;pointer-events:none;z-index:50;overflow:hidden}
-.cur{position:absolute;left:0;top:0;width:44px;height:44px;margin:-22px 0 0 -22px;opacity:0;will-change:transform;filter:drop-shadow(0 0 6px var(--c))}
-.cur svg{display:block}
-.sel{position:absolute;width:0;height:0;border:1px solid var(--c);background:color-mix(in srgb,var(--c) 14%,transparent);transition:width var(--draw,1.4s) cubic-bezier(.5,0,.2,1),height var(--draw,1.4s) cubic-bezier(.5,0,.2,1),opacity .5s}
-.sel::before,.sel::after{content:"";position:absolute;width:6px;height:6px;background:var(--bg);border:1px solid var(--c)}
-.sel::before{left:-4px;top:-4px}.sel::after{right:-4px;bottom:-4px}
-.sel .t{position:absolute;left:-1px;top:-19px;font:600 10px/1 var(--f-mono);padding:4px 6px;background:var(--c);color:#06080a;white-space:nowrap;letter-spacing:.04em}
-.sel.out{opacity:0}
-.building [data-b]{opacity:0}
-.building [data-b].done{opacity:1;animation:paint 1s cubic-bezier(.3,0,.2,1)}
-@keyframes paint{from{clip-path:inset(0 100% 0 0);opacity:.2}to{clip-path:inset(0 0 0 0);opacity:1}}
-.status{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:70;display:flex;align-items:center;gap:12px;padding:8px 8px 8px 14px;background:rgba(20,16,18,.94);border:1px solid var(--line);font:500 11px var(--f-mono);color:var(--muted);max-width:calc(100% - 32px);white-space:nowrap;box-shadow:0 10px 30px rgba(0,0,0,.5)}
-.dots{display:flex;gap:3px}
-.dots i{width:7px;height:7px;border-radius:50%}
-.bar{width:80px;height:3px;background:var(--line);position:relative}
-.bar b{position:absolute;inset:0 auto 0 0;width:100%;background:var(--agent);transition:width .3s}
-#state{color:var(--fg)}
-.status .btn{padding:8px 12px;font-size:11px}
+.chip{font:500 12px var(--f-mono);padding:6px 10px;border:1px solid var(--line);color:rgba(244,237,227,.85);background:rgba(244,237,227,.03)}
+.sub{font:600 11px var(--f-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--amber)}
+.tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.tool h3{font:900 24px/1 var(--f-display)}
+.tool ul{margin:6px 0 0;padding:0;list-style:none;color:var(--muted);font-size:13.5px;display:grid;gap:3px}
+.tool li::before{content:"— ";color:var(--amber)}
+.contact-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.val{font:600 16px var(--f-mono);padding:12px 14px;border:1px solid var(--line);background:rgba(0,0,0,.35);user-select:all;overflow-wrap:anywhere}
+.foot{font:500 11px var(--f-mono);letter-spacing:.08em;color:var(--muted)}
+.end{min-height:60vh}
 @media (max-width:900px){
-.hero-grid,.about{grid-template-columns:1fr}
-.projects{grid-template-columns:repeat(2,minmax(0,1fr))}
-.tools,.services,.steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+.nav{display:none}
+.panel{margin-left:0}
+.chap{font-size:30px}
+.hud-br .live,#coords,.chap{display:none}
 }
 @media (max-width:600px){
-.links{display:none}
-.projects,.tools,.services,.steps{grid-template-columns:1fr}
-.job{grid-template-columns:1fr;gap:6px}
+.grid2,.tools{grid-template-columns:1fr}
 .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
-.wordmark{-webkit-text-stroke-width:1.5px}
-.bar,.hide-sm{display:none}
+.job{grid-template-columns:1fr;gap:4px}
+.ticks button{width:26px}
+.hire{padding:8px 12px}
 }
+@media (prefers-reduced-motion:reduce){ .scrollhint::before{display:none} }
 </style>
 </head>
 <body>
-<nav class="nav" data-b="nav.bar">
-<div class="wrap">
-<span class="mark">HS</span>
-<div class="links"><a href="#about">About</a><a href="#work">Work</a><a href="#tools">Tools</a><a href="#contact">Contact</a><a href="https://www.linkedin.com/in/hasan-sweilam-86a476249/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
-<span class="avail"><i></i><span class="hide-sm">Open to overflow work</span></span>
-</div>
+<canvas id="gl" aria-hidden="true"></canvas>
+<div class="grain"></div>
+<div class="corner c1"></div><div class="corner c2"></div><div class="corner c3"></div><div class="corner c4"></div>
+<div class="hud hud-top">
+<a class="brand" href="#top"><i>HS</i><b>HASAN<br>SWEILAM</b></a>
+<nav class="nav" aria-label="Sections">
+<a href="#reel" data-n="reel">Reel</a><a href="#services" data-n="services">Services</a><a href="#work" data-n="work">Work</a><a href="#process" data-n="process">Process</a><a href="#contact" data-n="contact">Contact</a>
 </nav>
-<header class="hero wrap">
-<div class="wordmark" data-b="hero.wordmark">Portfolio</div>
-<div class="hero-grid">
-<div>
-<div data-b="hero.greeting"><div class="hello">Hello, I'm</div><div class="name">HASAN.</div></div>
-<div class="role" data-b="hero.role">Civil Engineer · Civil 3D Designer</div>
-<p class="lede" data-b="hero.lede">I produce <b>full civil construction document sets</b>: site, grading, stormwater, erosion control and utility plans for commercial, industrial and institutional projects across <b>multiple US states</b>.</p>
-<div class="ctas" data-b="hero.cta"><a class="btn primary" href="#work">View projects →</a><a class="btn" href="#contact">Get in touch</a></div>
+<a class="hire" href="#contact">Hire me</a>
+</div>
+<div class="hud hud-br">
+<div class="chap" id="chap">Points.</div>
+<div class="ticks" id="ticks">
+<button type="button" data-go="top" aria-label="Points"></button><button type="button" data-go="about" aria-label="Surface"></button><button type="button" data-go="experience" aria-label="Grade"></button><button type="button" data-go="work" aria-label="Network"></button><button type="button" data-go="process" aria-label="Plan"></button>
+</div>
+<div class="live" id="readout">Survey · 0 pts</div>
+<div id="coords">X 1250.00 Y 830.00 Z 100.00</div>
+</div>
+<div class="xhair" id="xhair"><i></i><span id="xlab">EL —</span></div>
+<main>
+<section class="sec hero" id="top" data-t="3.7">
+<div class="panel">
+<div class="kick">Civil engineer · Civil 3D site design</div>
+<h1>From points<br><em>to plans.</em></h1>
+<p class="lede">I'm <b>Hasan Sweilam</b>. I turn survey data into <b>permit-ready civil construction sets</b>: site, grading, stormwater, erosion control and utility plans for commercial, industrial and institutional projects across the US.</p>
+<div class="ctas"><a class="btn solid" href="#work">View the work →</a><a class="btn" href="#reel">Watch the reel</a><a class="btn" href="#contact">Get in touch</a></div>
 <div class="stats">
-<div class="stat" data-b="stat.years"><b>~5</b><span>years in land development & utilities</span></div>
-<div class="stat" data-b="stat.countries"><b>3</b><span>countries: US, New Zealand, Egypt</span></div>
-<div class="stat" data-b="stat.states"><b>12</b><span>US states with plan sets</span></div>
-<div class="stat" data-b="stat.tools"><b>4</b><span>core design tools</span></div>
+<div class="stat"><b>~5</b><span>years in land development</span></div>
+<div class="stat"><b>3</b><span>countries: US, NZ, Egypt</span></div>
+<div class="stat"><b>12</b><span>US states with plan sets</span></div>
+<div class="stat"><b>4</b><span>core design tools</span></div>
 </div>
+<div class="scrollhint">Scroll to build the site</div>
 </div>
-<div class="hero-side">
-<div class="plate" data-b="hero.plate"><canvas id="contours"></canvas><span class="mono">HS</span><span class="cap">Contours @ 1 ft<br>Index @ 5 ft</span></div>
-<div class="mini" data-b="card.current"><small>Current</small><strong>DOTec Professional Corp.</strong><span>Civil Engineer / Civil 3D Designer, remote</span></div>
-<div class="mini" data-b="card.next"><small>Next</small><strong>FE Civil exam</strong><span>EIT track, scheduled Q4 2026</span></div>
+</section>
+<section class="sec" id="reel" data-t="4.9">
+<div class="panel wide">
+<span class="idx">00 · SHOWREEL</span>
+<h2>Civil 3D in 20 seconds.</h2>
+<div class="reel"><video src="showreel.mp4" autoplay muted loop playsinline controls preload="metadata" onerror="this.closest('section').hidden=true"></video></div>
 </div>
+</section>
+<section class="sec" id="about" data-t="6.4">
+<div class="panel">
+<span class="idx">01 · SURFACE / ABOUT</span>
+<div class="kick">Engineering profile</div>
+<h2>Background &amp; approach.</h2>
+<p class="lede">Civil engineer from Egypt with a <b>B.Sc. in Civil Engineering from Suez Canal University</b>. My work spans land development, wet utilities, stormwater and roads on projects in the <b>United States, New Zealand and Egypt</b>.</p>
+<p class="lede">Day to day I model in <b>Civil 3D</b> (surfaces, feature lines, pipe and pressure networks, duct banks, COGO points) and turn the model into plan sets, drainage reports and review responses.</p>
+<p class="lede" style="border-left:3px solid var(--amber);padding-left:16px;color:var(--ink)">Every grade, pipe and note on the sheet has a code reference behind it.</p>
 </div>
-</header>
-<section class="sec" id="about">
-<div class="wrap">
-<div class="sec-head" data-b="about.head"><span class="index">// 01 · ABOUT</span><span class="eyebrow">Engineering profile</span><h2>Background & approach</h2></div>
-<div class="about">
-<div class="about-text">
-<p data-b="about.p1">I'm a civil engineer from Egypt with a <b>B.Sc. in Civil Engineering from Suez Canal University</b>. My work spans land development, wet utilities, stormwater and road infrastructure on projects in the <b>United States, New Zealand and Egypt</b>.</p>
-<p data-b="about.p2">Day to day I model in <b>Civil 3D</b> (pipe networks, pressure networks, duct banks, feature lines and COGO points) and turn that model into permit-ready plan sets, drainage reports and review responses.</p>
-<p class="quote" data-b="about.quote">Every grade, pipe and note on the sheet has a code reference behind it.</p>
-</div>
-<div class="pillars">
-<div class="pillar" data-b="pillar.site"><strong>Site & grading</strong><span>Site plans, grading, feature lines, earthwork</span></div>
-<div class="pillar" data-b="pillar.storm"><strong>Stormwater</strong><span>Detention, drainage reports, HydroCAD routing, SWPPP</span></div>
-<div class="pillar" data-b="pillar.util"><strong>Utilities</strong><span>Sanitary, water and storm networks; duct banks</span></div>
-<div class="pillar" data-b="pillar.review"><strong>Agency review</strong><span>Comment responses, RFIs, permit packages</span></div>
-</div>
+</section>
+<section class="sec tall" id="services" data-t="8.2">
+<div class="panel wide">
+<span class="idx">02 · SERVICES</span>
+<div class="kick">What I deliver</div>
+<h2>Overflow work I take on.</h2>
+<p class="lede">Remote support for engineering firms that need site-plan capacity without adding headcount.</p>
+<div class="grid2">
+<div class="card"><b>Site &amp; layout plans</b><span>Dimensioned site plans, parking, setbacks and zoning checks.</span></div>
+<div class="card"><b>Grading &amp; drainage plans</b><span>Surfaces, feature lines, spot elevations and swales.</span></div>
+<div class="card"><b>Stormwater reports</b><span>Detention sizing, pond routing and pre/post analysis in HydroCAD.</span></div>
+<div class="card"><b>Erosion control &amp; SWPPP</b><span>Phased ESC plans, details and SWPPP narratives.</span></div>
+<div class="card"><b>Utility plans &amp; profiles</b><span>Sanitary, water and storm networks with profiles.</span></div>
+<div class="card"><b>Review comment responses</b><span>Point-by-point responses to city and county reviewers.</span></div>
+<div class="card"><b>Quantities &amp; BOQ</b><span>Take-offs, bills of quantities and cost estimates.</span></div>
+<div class="card"><b>Standard details &amp; notes</b><span>Jurisdiction-specific details and general notes.</span></div>
 </div>
 </div>
 </section>
-<section class="sec" id="services">
-<div class="wrap">
-<div class="sec-head" data-b="services.head"><span class="index">// 02 · SERVICES</span><span class="eyebrow">What I deliver</span><h2>Overflow work I take on</h2><p>Remote support for engineering firms that need site-plan capacity without adding headcount.</p></div>
-<div class="services">
-<div class="svc" data-b="svc.site"><b>Site & layout plans</b><span>Dimensioned site plans, parking, setbacks and zoning checks.</span></div>
-<div class="svc" data-b="svc.grading"><b>Grading & drainage plans</b><span>Surfaces, feature lines, spot elevations and swales.</span></div>
-<div class="svc" data-b="svc.storm"><b>Stormwater reports</b><span>Detention sizing, pond routing and pre/post analysis.</span></div>
-<div class="svc" data-b="svc.esc"><b>Erosion control & SWPPP</b><span>Phased ESC plans, details and SWPPP narratives.</span></div>
-<div class="svc" data-b="svc.util"><b>Utility plans & profiles</b><span>Sanitary, water and storm networks with profiles.</span></div>
-<div class="svc" data-b="svc.review"><b>Review comment responses</b><span>Point-by-point responses to city and county reviewers.</span></div>
-<div class="svc" data-b="svc.qto"><b>Quantities & BOQ</b><span>Take-offs, bills of quantities and cost estimates.</span></div>
-<div class="svc" data-b="svc.details"><b>Standard details & notes</b><span>Jurisdiction-specific details and general construction notes.</span></div>
+<section class="sec tall" id="experience" data-t="11.2">
+<div class="panel wide">
+<span class="idx">03 · GRADE / EXPERIENCE</span>
+<div class="kick">Career path</div>
+<h2>Where I've worked.</h2>
+<div class="tl">
+<div class="job"><span class="when">Apr 2026 → now</span><div><h3>Civil Engineer / Civil 3D Designer</h3><div class="org">DOTec Professional Corp. · St. Charles, MO (remote)</div><p>Full civil CD sets (site, grading, stormwater, erosion control and utilities) for commercial, industrial and institutional sites across the US.</p></div></div>
+<div class="job"><span class="when">Aug 2024 → Apr 2026</span><div><h3>Infrastructure Engineer, Wet Utilities &amp; Roads</h3><div class="org">LANDEV Consultants · New Zealand (remote)</div><p>Auckland EPA and resource consent sets, remote design review, RFIs, and compliance with NZ standards and council requirements.</p></div></div>
+<div class="job"><span class="when">Jun 2021 → Apr 2025</span><div><h3>Head Technical Office Engineer, Infrastructure</h3><div class="org">Al-Baaly Company · Egypt</div><p>BOQs, quantity take-offs, IPCs, variations and claims on infrastructure projects valued at USD 5M+.</p></div></div>
+<div class="job"><span class="when">2016 → 2021</span><div><h3>B.Sc. Civil Engineering</h3><div class="org">Suez Canal University · Faculty of Engineering</div><p>Graduation project in highway engineering. NCEES FE Civil exam scheduled Q4 2026 (EIT track).</p></div></div>
 </div>
 </div>
 </section>
-<section class="sec">
-<div class="wrap">
-<div class="sec-head" data-b="exp.head"><span class="index">// 03 · EXPERIENCE</span><span class="eyebrow">Career path</span><h2>Where I've worked</h2></div>
-<div class="timeline">
-<div class="job" data-b="job.dotec"><span class="when">Apr 2026 → now</span><div><h3>Civil Engineer / Civil 3D Designer</h3><div class="org">DOTec Professional Corp. · St. Charles, MO (remote)</div><p>Full civil CD sets (site, grading, stormwater, erosion control and utilities) for commercial, industrial and institutional sites across the US.</p></div></div>
-<div class="job" data-b="job.landev"><span class="when">Aug 2024 → Apr 2026</span><div><h3>Infrastructure Engineer, Wet Utilities & Roads</h3><div class="org">LANDEV Consultants · New Zealand (remote)</div><p>Auckland EPA and resource consent sets, remote design review, RFIs, and compliance with NZ standards and council requirements.</p></div></div>
-<div class="job" data-b="job.baaly"><span class="when">Jun 2021 → Apr 2025</span><div><h3>Head Technical Office Engineer, Infrastructure</h3><div class="org">Al-Baaly Company · Egypt</div><p>BOQs, quantity take-offs, IPCs, variations and claims on infrastructure projects valued at USD 5M+.</p></div></div>
+<section class="sec tall" id="work" data-t="14.0">
+<div class="panel wide">
+<span class="idx">04 · NETWORK / WORK</span>
+<div class="kick">Selected projects</div>
+<h2>Flagship deliverables.</h2>
+<p class="lede">Representative project types from recent work. Client names withheld.</p>
+<div class="grid2">
+<div class="card"><span class="tag">Site civil set</span><b>Self-storage development</b><span>Site, grading, utility and erosion control plans for a new self-storage facility.</span><span class="where">Iowa, USA</span></div>
+<div class="card"><span class="tag">Wet utilities</span><b>Sanitary sewer main extension</b><span>Gravity sewer extension and state collection-system permit application.</span><span class="where">Florida, USA</span></div>
+<div class="card"><span class="tag">Stormwater</span><b>Outdoor storage yard &amp; detention pond</b><span>Site plan, SWPPP, detention pond design and drainage report.</span><span class="where">Nebraska, USA</span></div>
+<div class="card"><span class="tag">Grading</span><b>Minor grading plan sets</b><span>Multi-zone grading plans under a county grading ordinance.</span><span class="where">California, USA</span></div>
+<div class="card"><span class="tag">Roads</span><b>Emergency access road</b><span>Route selection and design, including the tree-clearing corridor.</span><span class="where">Washington, USA</span></div>
+<div class="card"><span class="tag">Residential</span><b>Single-family residence CD set</b><span>Full civil set with swales and stormwater management.</span><span class="where">Maryland, USA</span></div>
+<div class="card"><span class="tag">Agency review</span><b>Commercial stormwater plan set</b><span>Civil and stormwater plans taken through city review comments.</span><span class="where">North Carolina, USA</span></div>
+<div class="card"><span class="tag">Consent sets</span><b>Resource consent packages</b><span>Wet utilities and road design for Auckland consent submissions.</span><span class="where">Auckland, New Zealand</span></div>
+<div class="card"><span class="tag">Quantity surveying</span><b>1.2 GW solar PV roads BOQ</b><span>Roads bill of quantities and pricing for a utility-scale solar project.</span><span class="where">Minya, Egypt</span></div>
 </div>
 </div>
 </section>
-<section class="sec">
-<div class="wrap">
-<div class="sec-head" data-b="edu.head"><span class="index">// 04 · EDUCATION</span><span class="eyebrow">Credentials</span><h2>Education & licensure path</h2></div>
-<div class="timeline">
-<div class="job" data-b="edu.bsc"><span class="when">2016 → 2021</span><div><h3>B.Sc. Civil Engineering</h3><div class="org">Suez Canal University · Faculty of Engineering</div><p>Graduation project in highway engineering.</p></div></div>
-<div class="job" data-b="edu.fe"><span class="when">Q4 2026</span><div><h3>NCEES FE Civil exam</h3><div class="org">Engineer in Training (EIT) track</div><p>First step toward US professional engineering licensure.</p></div></div>
-</div>
-</div>
-</section>
-<section class="sec" id="work">
-<div class="wrap">
-<div class="sec-head" data-b="work.head"><span class="index">// 05 · WORK</span><span class="eyebrow">Selected projects</span><h2>Flagship deliverables</h2><p>Representative project types from recent work. Client names withheld.</p></div>
-<div class="projects">
-<article class="proj" data-b="proj.storage"><span class="tag">Site civil set</span><h3>Self-storage development</h3><p>Site, grading, utility and erosion control plans for a new self-storage facility.</p><span class="where">Iowa, USA</span><div class="chips"><span class="chip">Civil 3D</span><span class="chip">Grading</span></div></article>
-<article class="proj" data-b="proj.sewer"><span class="tag">Wet utilities</span><h3>Sanitary sewer main extension</h3><p>Gravity sewer extension and state collection-system permit application.</p><span class="where">Florida, USA</span><div class="chips"><span class="chip">Pipe networks</span><span class="chip">Permitting</span></div></article>
-<article class="proj" data-b="proj.pond"><span class="tag">Stormwater</span><h3>Outdoor storage yard & detention pond</h3><p>Site plan, SWPPP, detention pond design and drainage report.</p><span class="where">Nebraska, USA</span><div class="chips"><span class="chip">HydroCAD</span><span class="chip">SWPPP</span></div></article>
-<article class="proj" data-b="proj.grading"><span class="tag">Grading</span><h3>Minor grading plan sets</h3><p>Multi-zone grading plans prepared under a county grading ordinance.</p><span class="where">California, USA</span><div class="chips"><span class="chip">Feature lines</span><span class="chip">Earthwork</span></div></article>
-<article class="proj" data-b="proj.nz"><span class="tag">Consent sets</span><h3>Resource consent packages</h3><p>Wet utilities and road design for Auckland resource consent submissions.</p><span class="where">Auckland, New Zealand</span><div class="chips"><span class="chip">NZ standards</span><span class="chip">Roads</span></div></article>
-<article class="proj" data-b="proj.solar"><span class="tag">Quantity surveying</span><h3>1.2 GW solar PV roads BOQ</h3><p>Roads bill of quantities and pricing for a utility-scale solar and battery storage project.</p><span class="where">Minya, Egypt</span><div class="chips"><span class="chip">BOQ</span><span class="chip">Take-off</span></div></article>
-<article class="proj" data-b="proj.access"><span class="tag">Roads</span><h3>Emergency access road</h3><p>Route selection and design of an emergency access road, including the tree-clearing corridor.</p><span class="where">Washington, USA</span><div class="chips"><span class="chip">Alignment</span><span class="chip">Grading</span></div></article>
-<article class="proj" data-b="proj.residence"><span class="tag">Residential</span><h3>Single-family residence CD set</h3><p>Full civil set with swale design and stormwater management for a new home.</p><span class="where">Maryland, USA</span><div class="chips"><span class="chip">SWM</span><span class="chip">Swales</span></div></article>
-<article class="proj" data-b="proj.commercial"><span class="tag">Agency review</span><h3>Commercial stormwater plan set</h3><p>Civil and stormwater plans taken through city stormwater review comments.</p><span class="where">North Carolina, USA</span><div class="chips"><span class="chip">Stormwater</span><span class="chip">Review responses</span></div></article>
-</div>
-</div>
-</section>
-<section class="sec">
-<div class="wrap">
-<div class="sec-head" data-b="process.head"><span class="index">// 06 · PROCESS</span><span class="eyebrow">Workflow</span><h2>From survey to approved set</h2></div>
+<section class="sec" id="process" data-t="16.4">
+<div class="panel">
+<span class="idx">05 · PLAN / PROCESS</span>
+<div class="kick">Workflow</div>
+<h2>From survey to approved set.</h2>
 <div class="steps">
-<div class="step" data-b="step.base"><em>01</em><b>Base & survey</b><span>Import survey, COGO points and existing surface. Confirm datum and boundary.</span></div>
-<div class="step" data-b="step.code"><em>02</em><b>Code research</b><span>Pull the governing city, county and state standards before design starts.</span></div>
-<div class="step" data-b="step.model"><em>03</em><b>Model</b><span>Grading, feature lines, pipe networks and ponds in Civil 3D.</span></div>
-<div class="step" data-b="step.report"><em>04</em><b>Analyze & report</b><span>HydroCAD routing, drainage calculations and report narrative.</span></div>
-<div class="step" data-b="step.submit"><em>05</em><b>Submit & respond</b><span>Plan set, details and notes, then responses to reviewer comments.</span></div>
+<div class="step"><em>01</em><div><b>Base &amp; survey</b><span>Import survey, COGO points and existing surface. Confirm datum and boundary.</span></div></div>
+<div class="step"><em>02</em><div><b>Code research</b><span>Pull the governing city, county and state standards before design starts.</span></div></div>
+<div class="step"><em>03</em><div><b>Model</b><span>Grading, feature lines, pipe networks and ponds in Civil 3D.</span></div></div>
+<div class="step"><em>04</em><div><b>Analyze &amp; report</b><span>HydroCAD routing, drainage calculations and report narrative.</span></div></div>
+<div class="step"><em>05</em><div><b>Submit &amp; respond</b><span>Plan set, details and notes, then responses to reviewer comments.</span></div></div>
 </div>
 </div>
 </section>
-<section class="sec">
-<div class="wrap">
-<div class="sec-head" data-b="cov.head"><span class="index">// 07 · COVERAGE</span><span class="eyebrow">Jurisdictions</span><h2>Where my plans have gone to review</h2><p>Every agency has its own standards. I research them before the first line is drawn.</p></div>
-<div class="cov">
-<div class="covgrp" data-b="cov.us"><small>United States</small><div class="chips"><span class="chip big">California</span><span class="chip big">Connecticut</span><span class="chip big">Florida</span><span class="chip big">Georgia</span><span class="chip big">Iowa</span><span class="chip big">Maryland</span><span class="chip big">Missouri</span><span class="chip big">Nebraska</span><span class="chip big">North Carolina</span><span class="chip big">Tennessee</span><span class="chip big">Texas</span><span class="chip big">Washington</span></div></div>
-<div class="covgrp" data-b="cov.agency"><small>Agencies & standards</small><div class="chips"><span class="chip big">FDOT permits</span><span class="chip big">FDEP collection systems</span><span class="chip big">County grading ordinances</span><span class="chip big">City stormwater review</span><span class="chip big">SWPPP / NPDES</span></div></div>
-<div class="covgrp" data-b="cov.intl"><small>International</small><div class="chips"><span class="chip big">Auckland Council, New Zealand</span><span class="chip big">Infrastructure projects, Egypt</span></div></div>
-</div>
-</div>
-</section>
-<section class="sec" id="tools">
-<div class="wrap">
-<div class="sec-head" data-b="tools.head"><span class="index">// 08 · TOOLS</span><span class="eyebrow">Software</span><h2>The toolkit</h2></div>
+<section class="sec" id="coverage" data-t="17.6">
+<div class="panel wide">
+<span class="idx">06 · COVERAGE &amp; TOOLS</span>
+<h2>Where my plans go to review.</h2>
+<div class="sub">United States</div>
+<div class="chips"><span class="chip">California</span><span class="chip">Connecticut</span><span class="chip">Florida</span><span class="chip">Georgia</span><span class="chip">Iowa</span><span class="chip">Maryland</span><span class="chip">Missouri</span><span class="chip">Nebraska</span><span class="chip">North Carolina</span><span class="chip">Tennessee</span><span class="chip">Texas</span><span class="chip">Washington</span></div>
+<div class="sub">Agencies &amp; standards</div>
+<div class="chips"><span class="chip">FDOT permits</span><span class="chip">FDEP collection systems</span><span class="chip">County grading ordinances</span><span class="chip">City stormwater review</span><span class="chip">SWPPP / NPDES</span><span class="chip">Auckland Council, NZ</span></div>
 <div class="tools">
-<div class="tool" data-b="tool.c3d"><span class="lvl">Primary</span><h3>Civil 3D</h3><ul><li>Pipe & pressure networks</li><li>Duct banks</li><li>Feature lines, COGO</li></ul></div>
-<div class="tool" data-b="tool.hydrocad"><span class="lvl">Stormwater</span><h3>HydroCAD</h3><ul><li>Pond routing</li><li>Drainage reports</li></ul></div>
-<div class="tool" data-b="tool.infraworks"><span class="lvl">Concept</span><h3>InfraWorks</h3><ul><li>Site context models</li><li>Early layout studies</li></ul></div>
-<div class="tool" data-b="tool.navisworks"><span class="lvl">Coordination</span><h3>Navisworks</h3><ul><li>Model review</li><li>Utility clash checks</li></ul></div>
+<div class="card tool"><span class="tag">Primary</span><h3>Civil 3D</h3><ul><li>Pipe &amp; pressure networks</li><li>Feature lines, COGO, duct banks</li></ul></div>
+<div class="card tool"><span class="tag">Stormwater</span><h3>HydroCAD</h3><ul><li>Pond routing</li><li>Drainage reports</li></ul></div>
+<div class="card tool"><span class="tag">Concept</span><h3>InfraWorks</h3><ul><li>Site context models</li></ul></div>
+<div class="card tool"><span class="tag">Coordination</span><h3>Navisworks</h3><ul><li>Utility clash checks</li></ul></div>
 </div>
 </div>
 </section>
-<section class="contact" id="contact">
-<div class="wrap">
-<div data-b="contact.title" id="contactTitle"><span class="eyebrow">// 09 · Direct connect</span><h2>Let's build your next site plan.</h2></div>
-<p data-b="contact.text">Available for site-plan overflow work: grading, stormwater, utilities and full CD sets, delivered remotely.</p>
-<div class="email-row" data-b="contact.email"><span class="email" id="email">Hasansweilam@gmail.com</span><button class="btn primary" id="copy" type="button">Copy email</button></div>
-<div class="email-row" data-b="contact.links"><span class="email" id="phone">+20 101 005 5662</span><button class="btn" id="copyPhone" type="button">Copy number</button><a class="btn primary" href="https://www.linkedin.com/in/hasan-sweilam-86a476249/" target="_blank" rel="noopener">LinkedIn profile ↗</a></div>
-<div class="foot" data-b="contact.foot">Hasan Mohamed Sweilam · Ismailia, Egypt · Working in US time zones</div>
+<section class="sec" id="contact" data-t="19.4">
+<div class="panel">
+<span class="idx">07 · DIRECT CONNECT</span>
+<h2>Let's build your next site plan.</h2>
+<p class="lede">Available for site-plan overflow work: grading, stormwater, utilities and full CD sets, delivered remotely in US time zones.</p>
+<div class="contact-row"><span class="val" id="email">Hasansweilam@gmail.com</span><button class="btn solid" type="button" data-copy="email">Copy email</button></div>
+<div class="contact-row"><span class="val" id="phone">+20 101 005 5662</span><button class="btn" type="button" data-copy="phone">Copy number</button></div>
+<div class="contact-row"><a class="btn solid" href="https://www.linkedin.com/in/hasan-sweilam-86a476249/" target="_blank" rel="noopener">LinkedIn profile ↗</a></div>
+<div class="foot">Hasan Mohamed Sweilam · Ismailia, Egypt</div>
 </div>
 </section>
-<div class="status" role="status">
-<span class="dots" id="dots"></span>
-<span><span id="nAgents">8</span> agents</span>
-<span class="hide-sm"><span id="cnt">0/0</span> blocks</span>
-<span class="bar"><b id="bar"></b></span>
-<span id="state">loading</span>
-<button class="btn primary" id="build" type="button">Skip ⏭</button>
-</div>
-<div id="layer" aria-hidden="true"></div>
+<div class="end" data-t="20"></div>
+</main>
 <script>
-(() => {
-const COLORS = ['#36b6ff','#9be15d','#ffd23f','#ff6fb5','#b48cff','#ff9f43'];
-const PACE = { travel: 950, draw: 900, hold: 650, stagger: 380, follow: 0.055 };
-document.documentElement.style.setProperty('--draw', PACE.draw + 'ms');
-const ARROW = c => `<svg width="44" height="44" viewBox="0 0 44 44"><g stroke="${c}" stroke-width="1.3" fill="none" shape-rendering="crispEdges"><line x1="0" y1="22" x2="44" y2="22"/><line x1="22" y1="0" x2="22" y2="44"/><rect x="18" y="18" width="8" height="8"/></g></svg>`;
-const layer = document.getElementById('layer');
-const blocks = [...document.querySelectorAll('[data-b]')];
+document.querySelectorAll('[data-copy]').forEach(b => b.addEventListener('click', async () => {
+const el = document.getElementById(b.dataset.copy), label = b.textContent;
+try { await navigator.clipboard.writeText(el.textContent.trim()); b.textContent = 'Copied'; }
+catch { const s = getSelection(), r = document.createRange(); r.selectNodeContents(el); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected, press Ctrl+C'; }
+setTimeout(() => b.textContent = label, 2000);
+}));
+document.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => document.getElementById(b.dataset.go).scrollIntoView({behavior: 'smooth'})));
+</script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import {EffectComposer} from 'three/addons/postprocessing/EffectComposer.js';
+import {RenderPass} from 'three/addons/postprocessing/RenderPass.js';
+import {UnrealBloomPass} from 'three/addons/postprocessing/UnrealBloomPass.js';
+import {OutputPass} from 'three/addons/postprocessing/OutputPass.js';
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-const $ = id => document.getElementById(id);
-const sleep = ms => new Promise(r => setTimeout(r, ms));
-$('dots').innerHTML = COLORS.map(c => `<i style="background:${c}"></i>`).join('');
-$('nAgents').textContent = COLORS.length;
-const agents = COLORS.map(c => {
-const el = document.createElement('div');
-el.className = 'cur'; el.style.setProperty('--c', c); el.innerHTML = ARROW(c);
-layer.appendChild(el);
-return { el, c };
-});
-let done = 0, building = false, skip = false, queue = [];
-const update = () => {
-const d = Math.min(done, blocks.length);
-$('cnt').textContent = `${d}/${blocks.length}`;
-$('bar').style.width = (d / blocks.length * 100) + '%';
-};
-document.body.classList.add('building');
-update();
-function rel(el) {
-const r = el.getBoundingClientRect(), b = document.body.getBoundingClientRect();
-return { x: r.left - b.left, y: r.top - b.top, w: r.width, h: r.height };
+const mobile = matchMedia('(max-width: 900px)').matches;
+const canvas = document.getElementById('gl');
+let renderer;
+try { renderer = new THREE.WebGLRenderer({canvas, antialias: !mobile, powerPreference: 'high-performance'}); }
+catch (e) { canvas.remove(); throw e; }
+renderer.setPixelRatio(Math.min(devicePixelRatio || 1, mobile ? 1.5 : 1.75));
+renderer.setClearColor(0x000000, 1);
+const scene = new THREE.Scene();
+scene.fog = new THREE.FogExp2(0x000000, 0.0016);
+const camera = new THREE.PerspectiveCamera(42, 1, 0.5, 3000);
+camera.up.set(0, 0, 1);
+const composer = new EffectComposer(renderer);
+composer.addPass(new RenderPass(scene, camera));
+const bloom = new UnrealBloomPass(new THREE.Vector2(512, 512), 0.7, 0.5, 0.32);
+composer.addPass(bloom);
+composer.addPass(new OutputPass());
+const clamp = (v, a = 0, b = 1) => Math.max(a, Math.min(b, v));
+const ss = (a, b, x) => { const t = clamp((x - a) / (b - a)); return t * t * (3 - 2 * t); };
+const lerp = (a, b, t) => a + (b - a) * t;
+const ease = x => { x = clamp(x); return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+const S = 120;
+function E(x, y) { const X = x / 60, Y = y / 60;
+return 6 + 4.2 * Math.sin(1.1 * X + 0.6) * Math.cos(0.9 * Y - 0.4) + 3.2 * Math.exp(-((X - 1.1) ** 2 + (Y + 0.9) ** 2) / 0.5)
++ 2.4 * Math.exp(-((X + 1.2) ** 2 + (Y - 1.1) ** 2) / 0.6) + 0.54 * Math.sin(3.1 * X + 1.7 * Y) + 0.6 * Y; }
+const PAD = {x0: -38, x1: -6, y0: -6, y1: 22, z: 7.5}, PARK = {x0: -2, x1: 34, y0: -28, y1: 14, z: 6.6}, POND = {x: 58, y: 30, r: 15};
+function boxMask(x, y, b, f) { const dx = Math.max(b.x0 - x, 0, x - b.x1), dy = Math.max(b.y0 - y, 0, y - b.y1); return 1 - ss(0, f, Math.hypot(dx, dy)); }
+function designAt(x, y) { let d = E(x, y);
+const mp = boxMask(x, y, PAD, 14); if (mp > 0) d = lerp(d, PAD.z, mp);
+const mk = boxMask(x, y, PARK, 14); if (mk > 0) d = lerp(d, PARK.z - 0.012 * (x - PARK.x0), mk);
+const rp = Math.hypot(x - POND.x, y - POND.y), mo = 1 - ss(POND.r, POND.r + 10, rp); if (mo > 0) d = lerp(d, Math.min(E(x, y), 2.2 + 0.018 * rp * rp), mo);
+const mr = 1 - ss(7, 16, Math.abs(y + 70)); if (mr > 0) d = lerp(d, (E(x, -70) * 0.35 + 6.5 * 0.65) - 0.04 * Math.abs(y + 70), mr);
+return d; }
+const SEG = mobile ? 170 : 240;
+const geo = new THREE.PlaneGeometry(2 * S, 2 * S, SEG, SEG);
+const gp = geo.attributes.position, gn = gp.count;
+const aE = new Float32Array(gn), aF = new Float32Array(gn);
+for (let i = 0; i < gn; i++) { const x = gp.getX(i), y = gp.getY(i); aE[i] = E(x, y); aF[i] = designAt(x, y); }
+geo.setAttribute('aE', new THREE.BufferAttribute(aE, 1)); geo.setAttribute('aF', new THREE.BufferAttribute(aF, 1));
+const U = {uGrade: {value: 0}, uFlat: {value: 0}, uOp: {value: 0}, uCont: {value: 0}, uXray: {value: 0}, uCF: {value: 0}, uPlan: {value: 0}, uMouse: {value: new THREE.Vector3(0, 0, 0)}, uTime: {value: 0}};
+const surface = new THREE.Mesh(geo, new THREE.ShaderMaterial({
+uniforms: U, transparent: true, side: THREE.DoubleSide, extensions: {derivatives: true},
+vertexShader: `attribute float aE; attribute float aF; uniform float uGrade, uFlat; varying float vH; varying float vCF; varying vec2 vXY;
+void main(){ float h = mix(aE, aF, uGrade); vH = h; vCF = (aF - aE) * uGrade; vXY = position.xy; gl_Position = projectionMatrix * modelViewMatrix * vec4(position.xy, h * (1.0 - uFlat), 1.0); }`,
+fragmentShader: `uniform float uOp, uCont, uXray, uCF, uPlan, uTime; uniform vec3 uMouse; varying float vH; varying float vCF; varying vec2 vXY;
+float cline(float h, float iv, float w){ float f = h/iv; float d = abs(fract(f-0.5)-0.5); float fw = max(fwidth(f), 0.002); return 1.0 - smoothstep(0.0, fw*w, d); }
+void main(){ float r = length(vXY); float reveal = smoothstep(uCont*230.0, uCont*230.0 - 40.0, r);
+float c1 = cline(vH, 1.0, 1.2) * reveal, c5 = cline(vH, 5.0, 1.8) * reveal;
+vec3 col = mix(vec3(0.004,0.006,0.01), vec3(0.016,0.02,0.028), clamp(vH/16.0,0.0,1.0)) + vec3(1.0,0.62,0.22)*c1*0.55 + vec3(1.0,0.86,0.6)*c5*1.25;
+col += vec3(0.9,0.22,0.16)*smoothstep(0.3,3.0,-vCF)*uCF*0.22 + vec3(0.12,0.6,0.95)*smoothstep(0.3,3.0,vCF)*uCF*0.22;
+col = mix(col, vec3(0.012) + vec3(0.93,0.88,0.8)*c1*0.35 + vec3(1.0,0.75,0.4)*c5*0.9, uPlan);
+float md = length(vXY - uMouse.xy); float ring = (1.0 - smoothstep(0.0, 1.2, abs(md - 9.0 - sin(uTime*3.0)*0.8))) + exp(-md*md/30.0)*0.5;
+col += vec3(1.0,0.82,0.55) * ring * uMouse.z * 0.9;
+gl_FragColor = vec4(col, uOp * mix(1.0, 0.10 + 0.9*max(c1*0.6, c5), uXray)); }`
+}));
+scene.add(surface);
+const tgeo = new THREE.PlaneGeometry(2 * S, 2 * S, 60, 60);
+{ const p = tgeo.attributes.position; for (let i = 0; i < p.count; i++) p.setZ(i, E(p.getX(i), p.getY(i)) + 0.05); }
+const tinU = {uT: {value: 0}, uA: {value: 0}};
+scene.add(new THREE.LineSegments(new THREE.WireframeGeometry(tgeo), new THREE.ShaderMaterial({uniforms: tinU, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+vertexShader: `varying vec3 vP; void main(){ vP = position; gl_Position = projectionMatrix*modelViewMatrix*vec4(position,1.0);} `,
+fragmentShader: `uniform float uT, uA; varying vec3 vP; void main(){ float wave = exp(-pow((length(vP.xy) - uT*260.0)/22.0,2.0)); gl_FragColor = vec4(vec3(0.35,0.85,1.0)*(0.25+1.6*wave), uA*(0.18+0.9*wave)); }`})));
+const NP = mobile ? 38000 : 90000;
+const pg = new THREE.BufferGeometry();
+const pEnd = new Float32Array(NP * 3), pStart = new Float32Array(NP * 3), pD = new Float32Array(NP), pR = new Float32Array(NP);
+for (let i = 0; i < NP; i++) { const x = (rnd() * 2 - 1) * S, y = (rnd() * 2 - 1) * S; pEnd.set([x, y, E(x, y)], i * 3);
+const a = rnd() * Math.PI * 2, rr = 40 + Math.pow(rnd(), 0.6) * 260; pStart.set([Math.cos(a) * rr, Math.sin(a) * rr, 30 + rnd() * 140], i * 3);
+pD[i] = (Math.hypot(x, y) / (S * 1.42)) * 0.55 + rnd() * 0.35; pR[i] = rnd(); }
+pg.setAttribute('position', new THREE.BufferAttribute(pEnd, 3)); pg.setAttribute('aStart', new THREE.BufferAttribute(pStart, 3));
+pg.setAttribute('aD', new THREE.BufferAttribute(pD, 1)); pg.setAttribute('aR', new THREE.BufferAttribute(pR, 1));
+const PU = {uP: {value: 0}, uScan: {value: -999}, uA: {value: 1}, uSize: {value: 2.2}, uPR: {value: 1}};
+const points = new THREE.Points(pg, new THREE.ShaderMaterial({uniforms: PU, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+vertexShader: `attribute vec3 aStart; attribute float aD; attribute float aR; uniform float uP, uScan, uSize, uPR; varying vec3 vC;
+vec3 ramp(float t){ t = clamp(t,0.0,1.0); vec3 a=vec3(0.10,0.25,0.95), b=vec3(0.05,0.85,0.95), c=vec3(1.0,0.75,0.25), d=vec3(1.0,0.97,0.9);
+return t<0.33? mix(a,b,t/0.33) : t<0.66? mix(b,c,(t-0.33)/0.33) : mix(c,d,(t-0.66)/0.34); }
+void main(){ float k = clamp((uP - aD)/0.45, 0.0, 1.0); float e = k<0.5? 4.0*k*k*k : 1.0 - pow(-2.0*k+2.0,3.0)/2.0;
+vec3 sw = aStart; float ang = (1.0-e)*3.2 + aR*0.4; sw.xy = mat2(cos(ang),-sin(ang),sin(ang),cos(ang))*sw.xy;
+vec3 p = mix(sw, position, e); float scan = exp(-pow((position.x - uScan)/5.0, 2.0)) * step(0.98, e);
+vC = ramp((position.z - 1.0)/16.0) * (0.55 + 0.45*e) + vec3(0.9,1.0,1.0)*scan*2.2;
+vec4 mv = modelViewMatrix*vec4(p,1.0); gl_PointSize = uSize*uPR*(1.0+scan*1.5)*(300.0/-mv.z); gl_Position = projectionMatrix*mv; }`,
+fragmentShader: `uniform float uA; varying vec3 vC; void main(){ vec2 q = gl_PointCoord-0.5; float d = dot(q,q); if(d>0.25) discard; gl_FragColor = vec4(vC, uA*0.42*(1.0-d*3.2)); }`}));
+scene.add(points);
+const bW = PAD.x1 - PAD.x0 - 8, bD = PAD.y1 - PAD.y0 - 8, bH = 9, bGeo = new THREE.BoxGeometry(bW, bD, bH);
+const bMat = new THREE.MeshBasicMaterial({color: 0x10161e, transparent: true, opacity: 0}), bEdge = new THREE.LineBasicMaterial({color: 0xffd9a0, transparent: true, opacity: 0});
+const bMesh = new THREE.Mesh(bGeo, bMat), building = new THREE.Group(); building.add(bMesh); building.add(new THREE.LineSegments(new THREE.EdgesGeometry(bGeo), bEdge));
+building.position.set((PAD.x0 + PAD.x1) / 2, (PAD.y0 + PAD.y1) / 2, PAD.z); scene.add(building);
+const sMat = new THREE.LineBasicMaterial({color: 0xffffff, transparent: true, opacity: 0}), stripes = new THREE.Group();
+{ const pts = []; for (let x = PARK.x0 + 4; x <= PARK.x1 - 4; x += 3.2) for (const [ya, yb] of [[PARK.y0 + 3, PARK.y0 + 12], [PARK.y1 - 12, PARK.y1 - 3]]) { const z = PARK.z - 0.012 * (x - PARK.x0) + 0.08; pts.push(new THREE.Vector3(x, ya, z), new THREE.Vector3(x, yb, z)); }
+stripes.add(new THREE.LineSegments(new THREE.BufferGeometry().setFromPoints(pts), sMat)); } scene.add(stripes);
+const pipeMats = [];
+const pipeMat = c => { const m = new THREE.ShaderMaterial({uniforms: {uT: {value: 0}, uA: {value: 0}, uC: {value: new THREE.Color(c)}}, transparent: true, depthWrite: false, depthTest: false, blending: THREE.AdditiveBlending,
+vertexShader: `varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix*modelViewMatrix*vec4(position,1.0);} `,
+fragmentShader: `uniform float uT, uA; uniform vec3 uC; varying vec2 vUv; void main(){ float p = pow(fract(vUv.x*6.0 - uT*0.9), 6.0); float rim = 0.55 + 0.45*sin(vUv.y*6.2831); gl_FragColor = vec4(uC*(0.6*rim + 1.6*p), uA*(0.75 + 0.25*p)); }`}); pipeMats.push(m); return m; };
+const pipes = new THREE.Group();
+for (const p of [
+{c: 0x46d0ff, d: 3.2, r: 0.9, pts: [[-60, -32], [-22, -34], [12, -30], [40, -12], [52, 22]]},
+{c: 0x46d0ff, d: 2.8, r: 0.7, pts: [[-28, 40], [6, 36], [36, 34], [50, 30]]},
+{c: 0x7ee08a, d: 5.0, r: 0.7, pts: [[-22, -6], [-22, -48], [18, -58], [80, -64]]},
+{c: 0x6a8cff, d: 2.2, r: 0.55, pts: [[-110, -78], [110, -78]]},
+{c: 0x6a8cff, d: 2.2, r: 0.45, pts: [[-46, -78], [-46, -6]]}]) {
+const curve = new THREE.CatmullRomCurve3(p.pts.map(([x, y]) => new THREE.Vector3(x, y, designAt(x, y) - p.d)), false, 'centripetal', 0.2);
+pipes.add(new THREE.Mesh(new THREE.TubeGeometry(curve, 100, p.r, 10, false), pipeMat(p.c)));
+for (const [x, y] of p.pts.slice(0, -1)) { const mh = new THREE.Mesh(new THREE.CylinderGeometry(1.6, 1.6, p.d + 0.4, 18, 1, true), pipeMat(p.c)); mh.rotation.x = Math.PI / 2; mh.position.set(x, y, designAt(x, y) - p.d / 2); pipes.add(mh); }
 }
-function move(a, x, y, ms) {
-a.el.style.transition = ms ? `transform ${ms}ms cubic-bezier(.55,0,.2,1), opacity .3s` : 'opacity .3s';
-a.el.style.transform = `translate(${x}px,${y}px)`;
+scene.add(pipes);
+const K = [[0.0, [0, -330, 210], [0, 0, 10]], [3.7, [-170, -230, 120], [0, 0, 6]], [6.5, [-210, 60, 95], [0, 0, 6]], [9.0, [40, 170, 85], [0, -5, 6]],
+[11.6, [150, -40, 60], [-5, -5, 5]], [13.8, [85, -120, 46], [0, -10, 0]], [15.6, [-40, -125, 34], [5, -15, -2]], [17.2, [0, -30, 330], [0, 0, 0]], [20.0, [0, -2, 360], [0, 0, 0]]];
+const posC = new THREE.CatmullRomCurve3(K.map(k => new THREE.Vector3(...k[1])), false, 'centripetal'), tgtC = new THREE.CatmullRomCurve3(K.map(k => new THREE.Vector3(...k[2])), false, 'centripetal');
+const mouse = {x: 0, y: 0, sx: 0, sy: 0, px: -1, py: -1, in: false};
+function placeCamera(t) {
+let i = 0; while (i < K.length - 2 && t > K[i + 1][0]) i++;
+const u = clamp((i + ease((t - K[i][0]) / (K[i + 1][0] - K[i][0]))) / (K.length - 1));
+const p = posC.getPoint(u), g = tgtC.getPoint(u);
+const top = ss(15.8, 17.4, t), par = (1 - top) * 7;
+p.x += mouse.sx * par; p.z += -mouse.sy * par * 0.6;
+camera.position.copy(p); camera.up.set(0, top, 1 - top).normalize(); camera.lookAt(g);
 }
-async function work(a, b) {
-const r = rel(b);
-move(a, r.x, r.y, PACE.travel); await sleep(PACE.travel + 40);
-if (skip) return;
-const box = document.createElement('div');
-box.className = 'sel';
-box.style.cssText = `left:${r.x}px;top:${r.y}px;--c:${a.c}`;
-const t = document.createElement('span'); t.className = 't'; t.textContent = b.dataset.b;
-box.appendChild(t); layer.appendChild(box);
-box.getBoundingClientRect();
-box.style.width = r.w + 'px'; box.style.height = r.h + 'px';
-move(a, r.x + r.w, r.y + r.h, PACE.draw); await sleep(PACE.draw + 40);
-b.classList.add('done');
-done++; update();
-await sleep(PACE.hold);
-box.classList.add('out'); setTimeout(() => box.remove(), 400);
+const CH = [[0, 'Points.'], [4.8, 'Surface.'], [8.6, 'Grade.'], [12.8, 'Network.'], [16.2, 'Plan.']];
+const chapEl = document.getElementById('chap'), ticks = [...document.querySelectorAll('#ticks button')], readout = document.getElementById('readout'), coords = document.getElementById('coords');
+const xh = document.getElementById('xhair'), xlab = document.getElementById('xlab');
+const navLinks = [...document.querySelectorAll('.nav a')];
+let anchors = [];
+function measure() { anchors = [...document.querySelectorAll('[data-t]')].map(el => { const r = el.getBoundingClientRect(); return [r.top + scrollY + Math.min(r.height, innerHeight) * 0.5, +el.dataset.t, el.id]; }); }
+function targetT() { const y = scrollY + innerHeight * 0.5; if (y <= anchors[0][0]) return anchors[0][1];
+for (let i = 0; i < anchors.length - 1; i++) { const [y0, t0] = anchors[i], [y1, t1] = anchors[i + 1]; if (y <= y1) return lerp(t0, t1, (y - y0) / (y1 - y0)); } return anchors[anchors.length - 1][1]; }
+function resize() { const w = innerWidth, h = innerHeight; renderer.setSize(w, h, false); composer.setSize(w, h); camera.aspect = w / h;
+if (w > 900) camera.setViewOffset(w, h, -w * 0.17, 0, w, h); else camera.clearViewOffset(); camera.updateProjectionMatrix(); PU.uPR.value = renderer.getPixelRatio() * (h / 1080); measure(); }
+addEventListener('resize', resize); resize();
+addEventListener('load', measure);
+addEventListener('pointermove', e => { mouse.x = e.clientX / innerWidth * 2 - 1; mouse.y = e.clientY / innerHeight * 2 - 1; mouse.px = e.clientX; mouse.py = e.clientY; mouse.in = true; xh.style.transform = `translate(${e.clientX}px,${e.clientY}px)`; xh.classList.add('on'); });
+document.addEventListener('pointerleave', () => { mouse.in = false; xh.classList.remove('on'); });
+if (matchMedia('(hover:hover) and (pointer:fine)').matches) document.body.classList.add('cad');
+const ray = new THREE.Raycaster(), ndc = new THREE.Vector2();
+function pick(t) {
+if (!mouse.in || mouse.px < 0) return null;
+ndc.set(mouse.px / innerWidth * 2 - 1, -(mouse.py / innerHeight) * 2 + 1); ray.setFromCamera(ndc, camera);
+const o = ray.ray.origin, d = ray.ray.direction, g = U.uGrade.value, fl = U.uFlat.value;
+const hAt = (x, y) => lerp(E(x, y), designAt(x, y), g) * (1 - fl);
+let s0 = 0, s1 = 900, prev = null;
+for (let s = s0; s < s1; s += 3) { const x = o.x + d.x * s, y = o.y + d.y * s, z = o.z + d.z * s;
+if (Math.abs(x) > S || Math.abs(y) > S) { prev = null; continue; }
+const h = hAt(x, y); if (z <= h) { let a = s - 3, b = s; for (let k = 0; k < 10; k++) { const m = (a + b) / 2, X = o.x + d.x * m, Y = o.y + d.y * m; if (o.z + d.z * m <= hAt(X, Y)) b = m; else a = m; }
+const X = o.x + d.x * b, Y = o.y + d.y * b; return [X, Y, lerp(E(X, Y), designAt(X, Y), g)]; } }
+return null;
 }
-async function agentLoop(a, delay) {
-await sleep(delay);
-while (queue.length) {
-const b = queue.shift(); b._claimed = true;
-await work(a, b);
+let T = reduce ? targetT() : 0, last = performance.now();
+function frame(now) {
+const dt = Math.min(0.05, (now - last) / 1000); last = now;
+const tgt = targetT(); T = reduce ? tgt : T + (tgt - T) * (1 - Math.exp(-dt * (T < 3.7 ? 1.1 : 3.2)));
+const t = T;
+mouse.sx += (mouse.x - mouse.sx) * (1 - Math.exp(-dt * 3)); mouse.sy += (mouse.y - mouse.sy) * (1 - Math.exp(-dt * 3));
+PU.uP.value = clamp((t - 0.2) / 3.4) * 1.45; PU.uScan.value = lerp(-S - 20, S + 20, ((now / 1000) % 6) / 6); PU.uA.value = 1 - ss(5.6, 7.4, t) * 0.92; PU.uSize.value = lerp(2.4, 1.2, ss(5, 7, t)); points.visible = t < 12.5;
+U.uOp.value = ss(4.4, 5.8, t); U.uCont.value = ss(5.0, 7.8, t) * 1.4; tinU.uT.value = clamp((t - 4.6) / 2.4); tinU.uA.value = ss(4.6, 5.1, t) * (1 - ss(7.6, 8.6, t));
+U.uGrade.value = ease((t - 9.0) / 2.6); U.uCF.value = ss(9.0, 9.8, t) * (1 - ss(12.4, 13.4, t)); U.uTime.value = now / 1000;
+const bk = ease((t - 10.4) / 1.4), fl = ease((t - 15.9) / 1.6);
+building.scale.set(1, 1, Math.max(0.001, bk * (1 - fl))); building.position.z = PAD.z + (bH / 2) * bk * (1 - fl);
+bMat.opacity = 0.75 * bk * (1 - ss(15.9, 16.6, t)); bMesh.visible = bMat.opacity > 0.01; bEdge.opacity = bk; sMat.opacity = 0.7 * ss(11.0, 11.8, t);
+U.uXray.value = ss(12.8, 13.8, t) * (1 - ss(16.0, 17.0, t));
+const pa = ss(13.0, 14.0, t); for (const m of pipeMats) { m.uniforms.uT.value = now / 1000; m.uniforms.uA.value = pa; }
+U.uFlat.value = fl; U.uPlan.value = fl; pipes.scale.z = 1 - fl * 0.999; stripes.scale.z = 1 - fl * 0.999;
+bloom.strength = (t < 4.8 ? 0.55 : t < 8.6 ? 0.85 : t < 12.8 ? 0.65 : 0.75) * (1 - fl) + 0.38 * fl;
+scene.fog.density = lerp(0.0016, 0.0003, fl);
+placeCamera(t);
+const hit = U.uOp.value > 0.5 ? pick(t) : null;
+U.uMouse.value.set(hit ? hit[0] : 0, hit ? hit[1] : 0, lerp(U.uMouse.value.z, hit ? 1 : 0, 0.2));
+xlab.textContent = hit ? `EL ${(100 + hit[2]).toFixed(2)}  ·  N ${(830 + hit[1]).toFixed(1)}  E ${(1250 + hit[0]).toFixed(1)}` : (t < 4.4 ? 'SCANNING…' : 'PICK A POINT');
+composer.render();
+let ci = 0; for (let i = 0; i < CH.length; i++) if (t >= CH[i][0] - 0.2) ci = i;
+if (chapEl.textContent !== CH[ci][1]) chapEl.textContent = CH[ci][1];
+ticks.forEach((b, i) => b.classList.toggle('on', i <= ci));
+const pts = Math.round(110482 * clamp(PU.uP.value / 1.2));
+const k = ease((t - 9.2) / 2.4);
+readout.textContent = ci === 0 ? `Survey · ${pts.toLocaleString('en-US')} pts` : ci === 1 ? 'TIN · 1 ft contours · index 5 ft' : ci === 2 ? `Cut ${Math.round(1690 * k).toLocaleString('en-US')} CY · Fill ${Math.round(2560 * k).toLocaleString('en-US')} CY` : ci === 3 ? 'Storm 18" RCP · San 8" PVC · Water 8" DIP' : 'C-3.0 · C-4.0 · C-5.0 · Plan set';
+const p = camera.position; coords.textContent = `X ${(1250 + p.x).toFixed(2)}  Y ${(830 + p.y).toFixed(2)}  Z ${(100 + p.z / 4).toFixed(2)}`;
+const y = scrollY + innerHeight * 0.5; let cur = ''; for (const [ay, , id] of anchors) if (y >= ay - innerHeight * 0.6) cur = id;
+navLinks.forEach(a => a.classList.toggle('on', a.dataset.n === cur));
+requestAnimationFrame(frame);
 }
-}
-function follow() {
-if (!building) return;
-const active = blocks.find(b => b._claimed && !b.classList.contains('done')) || blocks.find(b => !b.classList.contains('done'));
-if (active) {
-const max = document.documentElement.scrollHeight - innerHeight;
-const target = Math.min(max, Math.max(0, scrollY + active.getBoundingClientRect().top - innerHeight * 0.3));
-if (target > scrollY + 1) scrollTo(0, scrollY + (target - scrollY) * PACE.follow);
-}
-requestAnimationFrame(follow);
-}
-async function finale() {
-const r = rel($('contactTitle'));
-const cx = r.x + r.w / 2, cy = r.y + r.h / 2;
-const rad = Math.min(150, innerWidth * 0.32);
-agents.forEach((a, i) => { const ang = i / agents.length * Math.PI * 2; move(a, cx + Math.cos(ang) * rad, cy + Math.sin(ang) * rad * .6, 700); });
-await sleep(720);
-const t0 = performance.now();
-await new Promise(res => {
-const spin = now => {
-const t = now - t0;
-agents.forEach((a, i) => {
-const ang = i / agents.length * Math.PI * 2 + t * 0.0035;
-const rr = rad * (1 - Math.min(1, t / 2400) * 0.55);
-move(a, cx + Math.cos(ang) * rr, cy + Math.sin(ang) * rr * .6, 0);
-});
-t < 2400 ? requestAnimationFrame(spin) : res();
-};
-requestAnimationFrame(spin);
-});
-agents.forEach(a => a.el.style.opacity = 0);
-}
-async function build() {
-if (building) return;
-building = true; skip = false;
-$('build').textContent = 'Skip ⏭';
-$('state').textContent = 'building';
-blocks.forEach(b => { b.classList.remove('done'); b._claimed = false; });
-document.body.classList.add('building');
-done = 0; update();
-scrollTo(0, 0);
-await sleep(60);
-layer.style.height = document.body.scrollHeight + 'px';
-if (reduce) {
-for (const b of blocks) { b.classList.add('done'); done++; update(); await sleep(30); }
-} else {
-const cx = innerWidth / 2, cy = scrollY + innerHeight * 0.45;
-agents.forEach((a, i) => {
-move(a, cx + (Math.random() - .5) * 60, cy + (Math.random() - .5) * 60, 0);
-a.el.style.opacity = 1;
-});
-await sleep(900);
-queue = blocks.slice();
-requestAnimationFrame(follow);
-await Promise.all(agents.map((a, i) => agentLoop(a, i * PACE.stagger)));
-agents.forEach(a => a.el.style.opacity = 0);
-}
-document.body.classList.remove('building');
-building = false;
-$('state').textContent = 'built';
-$('build').textContent = '↻ Replay build';
-}
-function skipBuild() {
-skip = true; queue = [];
-blocks.forEach(b => b.classList.add('done'));
-done = blocks.length; update();
-agents.forEach(a => a.el.style.opacity = 0);
-layer.querySelectorAll('.sel').forEach(s => s.remove());
-}
-$('build').addEventListener('click', () => building ? skipBuild() : build());
-let started = false;
-const autoStart = () => { if (!started) { started = true; setTimeout(build, 350); } };
-if (document.fonts) document.fonts.ready.then(autoStart);
-setTimeout(autoStart, 1500);
-$('copy').addEventListener('click', async () => {
-const txt = $('email').textContent.trim();
-try { await navigator.clipboard.writeText(txt); $('copy').textContent = 'Copied'; }
-catch { const s = getSelection(), rg = document.createRange(); rg.selectNodeContents($('email')); s.removeAllRanges(); s.addRange(rg); $('copy').textContent = 'Selected, press Ctrl+C'; }
-setTimeout(() => $('copy').textContent = 'Copy email', 2000);
-});
-$('copyPhone').addEventListener('click', async () => { const t = $('phone').textContent.trim(); try { await navigator.clipboard.writeText(t); $('copyPhone').textContent = 'Copied'; } catch { const s = getSelection(), rg = document.createRange(); rg.selectNodeContents($('phone')); s.removeAllRanges(); s.addRange(rg); $('copyPhone').textContent = 'Selected, press Ctrl+C'; } setTimeout(() => $('copyPhone').textContent = 'Copy number', 2000); });
-const cv = $('contours');
-function draw() {
-const p = cv.parentElement, dpr = devicePixelRatio || 1;
-const w = p.clientWidth, h = p.clientHeight;
-cv.width = w * dpr; cv.height = h * dpr;
-const g = cv.getContext('2d'); g.scale(dpr, dpr);
-const cx = w * 0.62, cy = h * 0.42;
-for (let k = 1; k <= 26; k++) {
-g.beginPath();
-for (let s = 0; s <= 120; s++) {
-const a = s / 120 * Math.PI * 2;
-const r = k * Math.max(w, h) * 0.028 * (1 + 0.16 * Math.sin(3 * a + k * 0.35) + 0.09 * Math.cos(5 * a - k * 0.22) + 0.05 * Math.sin(a + k));
-const x = cx + Math.cos(a) * r * 1.25, y = cy + Math.sin(a) * r;
-s ? g.lineTo(x, y) : g.moveTo(x, y);
-}
-g.closePath();
-const idx = k % 5 === 0;
-g.strokeStyle = idx ? 'rgba(22,9,10,.75)' : 'rgba(22,9,10,.32)';
-g.lineWidth = idx ? 1.8 : 0.9;
-g.stroke();
-}
-g.fillStyle = 'rgba(22,9,10,.85)';
-g.font = '600 10px "IBM Plex Mono", monospace';
-g.beginPath(); g.arc(cx, cy, 3, 0, Math.PI * 2); g.fill();
-g.fillText('EL 102.50', cx + 8, cy - 6);
-}
-draw();
-addEventListener('resize', () => { if (!building) draw(); });
-document.fonts && document.fonts.ready.then(draw);
-})();
+requestAnimationFrame(frame);
+window.__setT = v => { T = v; };
 </script>
 </body>
 </html>
