@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Hasan Sweilam: Civil Engineer and Civil 3D Designer. Site, grading, stormwater and utility plan sets.">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Hasan Sweilam Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{
+--bg:#0e0b0c; --panel:#171214; --panel-2:#1f191b; --line:#2e2528;
+--fg:#f0e9e6; --muted:#a3968f; --red:#e5383b; --red-deep:#7d1a1f; --agent:#36b6ff;
+--f-display:"Anton",Impact,"Arial Narrow",sans-serif;
+--f-script:"Caveat","Brush Script MT",cursive;
+--f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+--f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+color-scheme:dark;
+}
+html{background:var(--bg)}
+body{
+position:relative; overflow-x:hidden; color:var(--fg); font-family:var(--f-body); font-size:15px; line-height:1.6;
+background:var(--bg);
+background-image:radial-gradient(60rem 40rem at 70% 8rem, rgba(229,56,59,.13), transparent 70%),
+radial-gradient(40rem 30rem at 10% 60%, rgba(229,56,59,.06), transparent 70%);
+}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--agent);outline-offset:3px}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:rgba(14,11,12,.86);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:20px;padding-block:12px}
+.mark{display:grid;place-items:center;width:30px;height:30px;background:var(--red);color:#fff;font:600 12px var(--f-mono);letter-spacing:.04em}
+.links{display:flex;gap:18px;font:500 12px var(--f-mono);text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.links a{text-decoration:none}.links a:hover{color:var(--fg)}
+.avail{margin-left:auto;display:flex;align-items:center;gap:8px;font:500 11px var(--f-mono);color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.avail i{width:7px;height:7px;border-radius:50%;background:#4fd67a;box-shadow:0 0 8px #4fd67a}
+.eyebrow{font:600 11px var(--f-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+.sec{padding-block:72px;border-top:1px solid var(--line)}
+.sec-head{display:grid;gap:10px;margin-bottom:36px}
+.sec-head h2{font:700 clamp(26px,3.4vw,38px)/1.15 var(--f-body);letter-spacing:-.01em}
+.sec-head p{color:var(--muted);max-width:60ch}
+.index{font:500 11px var(--f-mono);color:var(--muted);letter-spacing:.08em}
+.chip{display:inline-block;font:500 11px var(--f-mono);padding:3px 8px;border:1px solid var(--line);color:var(--muted);background:var(--panel)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.hero{padding-block:40px 64px;overflow:hidden}
+.wordmark{font:400 clamp(56px,14vw,184px)/.9 var(--f-display);letter-spacing:.01em;color:transparent;-webkit-text-stroke:2px var(--red);text-transform:uppercase;white-space:nowrap}
+.hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;margin-top:-6px}
+.hello{font:700 clamp(30px,4vw,44px)/1 var(--f-script);color:var(--fg);transform:rotate(-3deg);transform-origin:left}
+.name{display:inline-block;margin-top:6px;background:var(--red);color:#fff;font:400 clamp(44px,6vw,72px)/1 var(--f-display);padding:6px 16px 4px;letter-spacing:.02em}
+.role{display:flex;align-items:center;gap:10px;margin-top:18px;font:600 12px var(--f-mono);letter-spacing:.14em;text-transform:uppercase}
+.role::before{content:"";width:7px;height:7px;background:var(--red)}
+.lede{margin-top:16px;max-width:52ch;color:var(--muted);font-size:16px}
+.lede b{color:var(--fg);font-weight:600}
+.ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{font:600 12px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:11px 16px;border:1px solid var(--line);background:var(--panel);color:var(--fg);cursor:pointer}
+.btn.primary{background:var(--red);border-color:var(--red);color:#fff}
+.btn:hover{border-color:var(--red)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:30px;max-width:640px}
+.stat b{display:block;font:400 34px/1 var(--f-display);color:var(--red)}
+.stat span{display:block;margin-top:6px;font:500 11px/1.45 var(--f-mono);color:var(--muted);letter-spacing:.04em}
+.hero-side{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;align-content:start}
+.plate{grid-column:1/-1;position:relative;background:var(--red);aspect-ratio:16/10;max-width:100%;overflow:hidden}
+.plate canvas{position:absolute;inset:0;width:100%;height:100%}
+.plate .mono{position:absolute;left:16px;bottom:12px;font:400 64px/1 var(--f-display);color:#16090a;letter-spacing:.02em}
+.plate .cap{position:absolute;right:12px;bottom:12px;font:600 10px var(--f-mono);color:#16090a;letter-spacing:.1em;text-transform:uppercase;text-align:right}
+.mini{background:var(--panel);border:1px solid var(--line);padding:14px;display:grid;gap:4px;min-width:0}
+.mini small{font:600 10px var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.mini strong{font-weight:600;font-size:14px}
+.mini span{color:var(--muted);font-size:13px;line-height:1.45}
+.about{display:grid;grid-template-columns:1.5fr 1fr;gap:48px}
+.about-text{display:grid;gap:16px;max-width:64ch;color:var(--muted);font-size:16px}
+.about-text b{color:var(--fg);font-weight:600}
+.quote{border-left:3px solid var(--red);padding:4px 0 4px 18px;color:var(--fg);font-size:18px;font-weight:500;max-width:56ch}
+.pillars{display:grid;gap:12px;align-content:start}
+.pillar{padding:14px 0;border-bottom:1px solid var(--line);display:grid;gap:4px}
+.pillar strong{font-size:14px}
+.pillar span{color:var(--muted);font-size:13px}
+.timeline{display:grid;gap:0}
+.job{display:grid;grid-template-columns:180px minmax(0,1fr);gap:24px;padding:22px 0;border-bottom:1px solid var(--line)}
+.job .when{font:500 12px var(--f-mono);color:var(--muted);letter-spacing:.04em}
+.job h3{font-size:18px;font-weight:600}
+.job .org{color:var(--red);font:600 12px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;margin:4px 0 8px}
+.job p{color:var(--muted);max-width:70ch}
+.projects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.proj{background:var(--panel);border:1px solid var(--line);padding:20px;display:grid;gap:10px;align-content:start;min-width:0}
+.proj .tag{font:600 10px var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.proj h3{font-size:17px;font-weight:600;line-height:1.3}
+.proj p{color:var(--muted);font-size:13.5px}
+.proj .where{font:500 11px var(--f-mono);color:var(--muted);margin-top:4px}
+.services{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.svc{border:1px solid var(--line);background:var(--panel);padding:18px;display:grid;gap:6px;align-content:start;min-width:0}
+.svc b{font-size:15px;font-weight:600}
+.svc span{color:var(--muted);font-size:13px;line-height:1.5}
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px;border-top:2px solid var(--red)}
+.step{padding-top:18px;display:grid;gap:6px;align-content:start;min-width:0}
+.step em{font:400 32px/1 var(--f-display);color:var(--red);font-style:normal}
+.step b{font-size:15px;font-weight:600}
+.step span{color:var(--muted);font-size:13px;line-height:1.5}
+.cov{display:grid;gap:26px}
+.covgrp{display:grid;gap:10px}
+.covgrp small{font:600 10px var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.chip.big{font-size:12px;padding:6px 10px;color:var(--fg)}
+.tools{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.tool{border:1px solid var(--line);padding:18px;display:grid;gap:8px;align-content:start;background:linear-gradient(180deg,var(--panel-2),var(--panel));min-width:0}
+.tool .lvl{font:500 11px var(--f-mono);color:var(--muted)}
+.tool h3{font:400 24px/1 var(--f-display);letter-spacing:.02em}
+.tool ul{margin:0;padding:0;list-style:none;display:grid;gap:4px;color:var(--muted);font-size:13px}
+.tool li::before{content:"— ";color:var(--red)}
+.contact{text-align:center;padding-block:96px 140px;border-top:1px solid var(--line)}
+.contact h2{font:700 clamp(30px,5vw,54px)/1.1 var(--f-body);letter-spacing:-.02em;margin-top:10px}
+.contact p{color:var(--muted);max-width:56ch;margin:14px auto 0}
+.email-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px;margin-top:26px}
+.email{font:600 15px var(--f-mono);user-select:all;padding:11px 14px;border:1px solid var(--line);background:var(--panel);overflow-wrap:anywhere}
+.foot{margin-top:40px;font:500 11px var(--f-mono);color:var(--muted);letter-spacing:.06em}
+#layer{position:absolute;left:0;top:0;width:100%;pointer-events:none;z-index:50;overflow:hidden}
+.cur{position:absolute;left:0;top:0;width:44px;height:44px;margin:-22px 0 0 -22px;opacity:0;will-change:transform;filter:drop-shadow(0 0 6px var(--c))}
+.cur svg{display:block}
+.sel{position:absolute;width:0;height:0;border:1px solid var(--c);background:color-mix(in srgb,var(--c) 14%,transparent);transition:width var(--draw,1.4s) cubic-bezier(.5,0,.2,1),height var(--draw,1.4s) cubic-bezier(.5,0,.2,1),opacity .5s}
+.sel::before,.sel::after{content:"";position:absolute;width:6px;height:6px;background:var(--bg);border:1px solid var(--c)}
+.sel::before{left:-4px;top:-4px}.sel::after{right:-4px;bottom:-4px}
+.sel .t{position:absolute;left:-1px;top:-19px;font:600 10px/1 var(--f-mono);padding:4px 6px;background:var(--c);color:#06080a;white-space:nowrap;letter-spacing:.04em}
+.sel.out{opacity:0}
+.building [data-b]{opacity:0}
+.building [data-b].done{opacity:1;animation:paint 1s cubic-bezier(.3,0,.2,1)}
+@keyframes paint{from{clip-path:inset(0 100% 0 0);opacity:.2}to{clip-path:inset(0 0 0 0);opacity:1}}
+.status{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:70;display:flex;align-items:center;gap:12px;padding:8px 8px 8px 14px;background:rgba(20,16,18,.94);border:1px solid var(--line);font:500 11px var(--f-mono);color:var(--muted);max-width:calc(100% - 32px);white-space:nowrap;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.dots{display:flex;gap:3px}
+.dots i{width:7px;height:7px;border-radius:50%}
+.bar{width:80px;height:3px;background:var(--line);position:relative}
+.bar b{position:absolute;inset:0 auto 0 0;width:100%;background:var(--agent);transition:width .3s}
+#state{color:var(--fg)}
+.status .btn{padding:8px 12px;font-size:11px}
+@media (max-width:900px){
+.hero-grid,.about{grid-template-columns:1fr}
+.projects{grid-template-columns:repeat(2,minmax(0,1fr))}
+.tools,.services,.steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:600px){
+.links{display:none}
+.projects,.tools,.services,.steps{grid-template-columns:1fr}
+.job{grid-template-columns:1fr;gap:6px}
+.stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+.wordmark{-webkit-text-stroke-width:1.5px}
+.bar,.hide-sm{display:none}
+}
+</style>
+</head>
+<body>
+<nav class="nav" data-b="nav.bar">
+<div class="wrap">
+<span class="mark">HS</span>
+<div class="links"><a href="#about">About</a><a href="#work">Work</a><a href="#tools">Tools</a><a href="#contact">Contact</a></div>
+<span class="avail"><i></i><span class="hide-sm">Open to overflow work</span></span>
+</div>
+</nav>
+<header class="hero wrap">
+<div class="wordmark" data-b="hero.wordmark">Portfolio</div>
+<div class="hero-grid">
+<div>
+<div data-b="hero.greeting"><div class="hello">Hello, I'm</div><div class="name">HASAN.</div></div>
+<div class="role" data-b="hero.role">Civil Engineer · Civil 3D Designer</div>
+<p class="lede" data-b="hero.lede">I produce <b>full civil construction document sets</b>: site, grading, stormwater, erosion control and utility plans for commercial, industrial and institutional projects across <b>multiple US states</b>.</p>
+<div class="ctas" data-b="hero.cta"><a class="btn primary" href="#work">View projects →</a><a class="btn" href="#contact">Get in touch</a></div>
+<div class="stats">
+<div class="stat" data-b="stat.years"><b>~5</b><span>years in land development & utilities</span></div>
+<div class="stat" data-b="stat.countries"><b>3</b><span>countries: US, New Zealand, Egypt</span></div>
+<div class="stat" data-b="stat.states"><b>12</b><span>US states with plan sets</span></div>
+<div class="stat" data-b="stat.tools"><b>4</b><span>core design tools</span></div>
+</div>
+</div>
+<div class="hero-side">
+<div class="plate" data-b="hero.plate"><canvas id="contours"></canvas><span class="mono">HS</span><span class="cap">Contours @ 1 ft<br>Index @ 5 ft</span></div>
+<div class="mini" data-b="card.current"><small>Current</small><strong>DOTec Professional Corp.</strong><span>Civil Engineer / Civil 3D Designer, remote</span></div>
+<div class="mini" data-b="card.next"><small>Next</small><strong>FE Civil exam</strong><span>EIT track, scheduled Q4 2026</span></div>
+</div>
+</div>
+</header>
+<section class="sec" id="about">
+<div class="wrap">
+<div class="sec-head" data-b="about.head"><span class="index">// 01 · ABOUT</span><span class="eyebrow">Engineering profile</span><h2>Background & approach</h2></div>
+<div class="about">
+<div class="about-text">
+<p data-b="about.p1">I'm a civil engineer from Egypt with a <b>B.Sc. in Civil Engineering from Suez Canal University</b>. My work spans land development, wet utilities, stormwater and road infrastructure on projects in the <b>United States, New Zealand and Egypt</b>.</p>
+<p data-b="about.p2">Day to day I model in <b>Civil 3D</b> (pipe networks, pressure networks, duct banks, feature lines and COGO points) and turn that model into permit-ready plan sets, drainage reports and review responses.</p>
+<p class="quote" data-b="about.quote">Every grade, pipe and note on the sheet has a code reference behind it.</p>
+</div>
+<div class="pillars">
+<div class="pillar" data-b="pillar.site"><strong>Site & grading</strong><span>Site plans, grading, feature lines, earthwork</span></div>
+<div class="pillar" data-b="pillar.storm"><strong>Stormwater</strong><span>Detention, drainage reports, HydroCAD routing, SWPPP</span></div>
+<div class="pillar" data-b="pillar.util"><strong>Utilities</strong><span>Sanitary, water and storm networks; duct banks</span></div>
+<div class="pillar" data-b="pillar.review"><strong>Agency review</strong><span>Comment responses, RFIs, permit packages</span></div>
+</div>
+</div>
+</div>
+</section>
+<section class="sec" id="services">
+<div class="wrap">
+<div class="sec-head" data-b="services.head"><span class="index">// 02 · SERVICES</span><span class="eyebrow">What I deliver</span><h2>Overflow work I take on</h2><p>Remote support for engineering firms that need site-plan capacity without adding headcount.</p></div>
+<div class="services">
+<div class="svc" data-b="svc.site"><b>Site & layout plans</b><span>Dimensioned site plans, parking, setbacks and zoning checks.</span></div>
+<div class="svc" data-b="svc.grading"><b>Grading & drainage plans</b><span>Surfaces, feature lines, spot elevations and swales.</span></div>
+<div class="svc" data-b="svc.storm"><b>Stormwater reports</b><span>Detention sizing, pond routing and pre/post analysis.</span></div>
+<div class="svc" data-b="svc.esc"><b>Erosion control & SWPPP</b><span>Phased ESC plans, details and SWPPP narratives.</span></div>
+<div class="svc" data-b="svc.util"><b>Utility plans & profiles</b><span>Sanitary, water and storm networks with profiles.</span></div>
+<div class="svc" data-b="svc.review"><b>Review comment responses</b><span>Point-by-point responses to city and county reviewers.</span></div>
+<div class="svc" data-b="svc.qto"><b>Quantities & BOQ</b><span>Take-offs, bills of quantities and cost estimates.</span></div>
+<div class="svc" data-b="svc.details"><b>Standard details & notes</b><span>Jurisdiction-specific details and general construction notes.</span></div>
+</div>
+</div>
+</section>
+<section class="sec">
+<div class="wrap">
+<div class="sec-head" data-b="exp.head"><span class="index">// 03 · EXPERIENCE</span><span class="eyebrow">Career path</span><h2>Where I've worked</h2></div>
+<div class="timeline">
+<div class="job" data-b="job.dotec"><span class="when">Apr 2026 → now</span><div><h3>Civil Engineer / Civil 3D Designer</h3><div class="org">DOTec Professional Corp. · St. Charles, MO (remote)</div><p>Full civil CD sets (site, grading, stormwater, erosion control and utilities) for commercial, industrial and institutional sites across the US.</p></div></div>
+<div class="job" data-b="job.landev"><span class="when">Aug 2024 → Apr 2026</span><div><h3>Infrastructure Engineer, Wet Utilities & Roads</h3><div class="org">LANDEV Consultants · New Zealand (remote)</div><p>Auckland EPA and resource consent sets, remote design review, RFIs, and compliance with NZ standards and council requirements.</p></div></div>
+<div class="job" data-b="job.baaly"><span class="when">Jun 2021 → Apr 2025</span><div><h3>Head Technical Office Engineer, Infrastructure</h3><div class="org">Al-Baaly Company · Egypt</div><p>BOQs, quantity take-offs, IPCs, variations and claims on infrastructure projects valued at USD 5M+.</p></div></div>
+</div>
+</div>
+</section>
+<section class="sec">
+<div class="wrap">
+<div class="sec-head" data-b="edu.head"><span class="index">// 04 · EDUCATION</span><span class="eyebrow">Credentials</span><h2>Education & licensure path</h2></div>
+<div class="timeline">
+<div class="job" data-b="edu.bsc"><span class="when">2016 → 2021</span><div><h3>B.Sc. Civil Engineering</h3><div class="org">Suez Canal University · Faculty of Engineering</div><p>Graduation project in highway engineering.</p></div></div>
+<div class="job" data-b="edu.fe"><span class="when">Q4 2026</span><div><h3>NCEES FE Civil exam</h3><div class="org">Engineer in Training (EIT) track</div><p>First step toward US professional engineering licensure.</p></div></div>
+</div>
+</div>
+</section>
+<section class="sec" id="work">
+<div class="wrap">
+<div class="sec-head" data-b="work.head"><span class="index">// 05 · WORK</span><span class="eyebrow">Selected projects</span><h2>Flagship deliverables</h2><p>Representative project types from recent work. Client names withheld.</p></div>
+<div class="projects">
+<article class="proj" data-b="proj.storage"><span class="tag">Site civil set</span><h3>Self-storage development</h3><p>Site, grading, utility and erosion control plans for a new self-storage facility.</p><span class="where">Iowa, USA</span><div class="chips"><span class="chip">Civil 3D</span><span class="chip">Grading</span></div></article>
+<article class="proj" data-b="proj.sewer"><span class="tag">Wet utilities</span><h3>Sanitary sewer main extension</h3><p>Gravity sewer extension and state collection-system permit application.</p><span class="where">Florida, USA</span><div class="chips"><span class="chip">Pipe networks</span><span class="chip">Permitting</span></div></article>
+<article class="proj" data-b="proj.pond"><span class="tag">Stormwater</span><h3>Outdoor storage yard & detention pond</h3><p>Site plan, SWPPP, detention pond design and drainage report.</p><span class="where">Nebraska, USA</span><div class="chips"><span class="chip">HydroCAD</span><span class="chip">SWPPP</span></div></article>
+<article class="proj" data-b="proj.grading"><span class="tag">Grading</span><h3>Minor grading plan sets</h3><p>Multi-zone grading plans prepared under a county grading ordinance.</p><span class="where">California, USA</span><div class="chips"><span class="chip">Feature lines</span><span class="chip">Earthwork</span></div></article>
+<article class="proj" data-b="proj.nz"><span class="tag">Consent sets</span><h3>Resource consent packages</h3><p>Wet utilities and road design for Auckland resource consent submissions.</p><span class="where">Auckland, New Zealand</span><div class="chips"><span class="chip">NZ standards</span><span class="chip">Roads</span></div></article>
+<article class="proj" data-b="proj.solar"><span class="tag">Quantity surveying</span><h3>1.2 GW solar PV roads BOQ</h3><p>Roads bill of quantities and pricing for a utility-scale solar and battery storage project.</p><span class="where">Minya, Egypt</span><div class="chips"><span class="chip">BOQ</span><span class="chip">Take-off</span></div></article>
+<article class="proj" data-b="proj.access"><span class="tag">Roads</span><h3>Emergency access road</h3><p>Route selection and design of an emergency access road, including the tree-clearing corridor.</p><span class="where">Washington, USA</span><div class="chips"><span class="chip">Alignment</span><span class="chip">Grading</span></div></article>
+<article class="proj" data-b="proj.residence"><span class="tag">Residential</span><h3>Single-family residence CD set</h3><p>Full civil set with swale design and stormwater management for a new home.</p><span class="where">Maryland, USA</span><div class="chips"><span class="chip">SWM</span><span class="chip">Swales</span></div></article>
+<article class="proj" data-b="proj.commercial"><span class="tag">Agency review</span><h3>Commercial stormwater plan set</h3><p>Civil and stormwater plans taken through city stormwater review comments.</p><span class="where">North Carolina, USA</span><div class="chips"><span class="chip">Stormwater</span><span class="chip">Review responses</span></div></article>
+</div>
+</div>
+</section>
+<section class="sec">
+<div class="wrap">
+<div class="sec-head" data-b="process.head"><span class="index">// 06 · PROCESS</span><span class="eyebrow">Workflow</span><h2>From survey to approved set</h2></div>
+<div class="steps">
+<div class="step" data-b="step.base"><em>01</em><b>Base & survey</b><span>Import survey, COGO points and existing surface. Confirm datum and boundary.</span></div>
+<div class="step" data-b="step.code"><em>02</em><b>Code research</b><span>Pull the governing city, county and state standards before design starts.</span></div>
+<div class="step" data-b="step.model"><em>03</em><b>Model</b><span>Grading, feature lines, pipe networks and ponds in Civil 3D.</span></div>
+<div class="step" data-b="step.report"><em>04</em><b>Analyze & report</b><span>HydroCAD routing, drainage calculations and report narrative.</span></div>
+<div class="step" data-b="step.submit"><em>05</em><b>Submit & respond</b><span>Plan set, details and notes, then responses to reviewer comments.</span></div>
+</div>
+</div>
+</section>
+<section class="sec">
+<div class="wrap">
+<div class="sec-head" data-b="cov.head"><span class="index">// 07 · COVERAGE</span><span class="eyebrow">Jurisdictions</span><h2>Where my plans have gone to review</h2><p>Every agency has its own standards. I research them before the first line is drawn.</p></div>
+<div class="cov">
+<div class="covgrp" data-b="cov.us"><small>United States</small><div class="chips"><span class="chip big">California</span><span class="chip big">Connecticut</span><span class="chip big">Florida</span><span class="chip big">Georgia</span><span class="chip big">Iowa</span><span class="chip big">Maryland</span><span class="chip big">Missouri</span><span class="chip big">Nebraska</span><span class="chip big">North Carolina</span><span class="chip big">Tennessee</span><span class="chip big">Texas</span><span class="chip big">Washington</span></div></div>
+<div class="covgrp" data-b="cov.agency"><small>Agencies & standards</small><div class="chips"><span class="chip big">FDOT permits</span><span class="chip big">FDEP collection systems</span><span class="chip big">County grading ordinances</span><span class="chip big">City stormwater review</span><span class="chip big">SWPPP / NPDES</span></div></div>
+<div class="covgrp" data-b="cov.intl"><small>International</small><div class="chips"><span class="chip big">Auckland Council, New Zealand</span><span class="chip big">Infrastructure projects, Egypt</span></div></div>
+</div>
+</div>
+</section>
+<section class="sec" id="tools">
+<div class="wrap">
+<div class="sec-head" data-b="tools.head"><span class="index">// 08 · TOOLS</span><span class="eyebrow">Software</span><h2>The toolkit</h2></div>
+<div class="tools">
+<div class="tool" data-b="tool.c3d"><span class="lvl">Primary</span><h3>Civil 3D</h3><ul><li>Pipe & pressure networks</li><li>Duct banks</li><li>Feature lines, COGO</li></ul></div>
+<div class="tool" data-b="tool.hydrocad"><span class="lvl">Stormwater</span><h3>HydroCAD</h3><ul><li>Pond routing</li><li>Drainage reports</li></ul></div>
+<div class="tool" data-b="tool.infraworks"><span class="lvl">Concept</span><h3>InfraWorks</h3><ul><li>Site context models</li><li>Early layout studies</li></ul></div>
+<div class="tool" data-b="tool.navisworks"><span class="lvl">Coordination</span><h3>Navisworks</h3><ul><li>Model review</li><li>Utility clash checks</li></ul></div>
+</div>
+</div>
+</section>
+<section class="contact" id="contact">
+<div class="wrap">
+<div data-b="contact.title" id="contactTitle"><span class="eyebrow">// 09 · Direct connect</span><h2>Let's build your next site plan.</h2></div>
+<p data-b="contact.text">Available for site-plan overflow work: grading, stormwater, utilities and full CD sets, delivered remotely.</p>
+<p data-b="contact.email" style="margin-top:22px;color:var(--fg)">Send me a message here on the platform with your project details.</p>
+<div class="foot" data-b="contact.foot">Hasan Mohamed Sweilam · Ismailia, Egypt · Working in US time zones</div>
+</div>
+</section>
+<div class="status" role="status">
+<span class="dots" id="dots"></span>
+<span><span id="nAgents">8</span> agents</span>
+<span class="hide-sm"><span id="cnt">0/0</span> blocks</span>
+<span class="bar"><b id="bar"></b></span>
+<span id="state">loading</span>
+<button class="btn primary" id="build" type="button">Skip ⏭</button>
+</div>
+<div id="layer" aria-hidden="true"></div>
+<script>
+(() => {
+const COLORS = ['#36b6ff','#9be15d','#ffd23f','#ff6fb5','#b48cff','#ff9f43'];
+const PACE = { travel: 950, draw: 900, hold: 650, stagger: 380, follow: 0.055 };
+document.documentElement.style.setProperty('--draw', PACE.draw + 'ms');
+const ARROW = c => `<svg width="44" height="44" viewBox="0 0 44 44"><g stroke="${c}" stroke-width="1.3" fill="none" shape-rendering="crispEdges"><line x1="0" y1="22" x2="44" y2="22"/><line x1="22" y1="0" x2="22" y2="44"/><rect x="18" y="18" width="8" height="8"/></g></svg>`;
+const layer = document.getElementById('layer');
+const blocks = [...document.querySelectorAll('[data-b]')];
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $ = id => document.getElementById(id);
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+$('dots').innerHTML = COLORS.map(c => `<i style="background:${c}"></i>`).join('');
+$('nAgents').textContent = COLORS.length;
+const agents = COLORS.map(c => {
+const el = document.createElement('div');
+el.className = 'cur'; el.style.setProperty('--c', c); el.innerHTML = ARROW(c);
+layer.appendChild(el);
+return { el, c };
+});
+let done = 0, building = false, skip = false, queue = [];
+const update = () => {
+const d = Math.min(done, blocks.length);
+$('cnt').textContent = `${d}/${blocks.length}`;
+$('bar').style.width = (d / blocks.length * 100) + '%';
+};
+document.body.classList.add('building');
+update();
+function rel(el) {
+const r = el.getBoundingClientRect(), b = document.body.getBoundingClientRect();
+return { x: r.left - b.left, y: r.top - b.top, w: r.width, h: r.height };
+}
+function move(a, x, y, ms) {
+a.el.style.transition = ms ? `transform ${ms}ms cubic-bezier(.55,0,.2,1), opacity .3s` : 'opacity .3s';
+a.el.style.transform = `translate(${x}px,${y}px)`;
+}
+async function work(a, b) {
+const r = rel(b);
+move(a, r.x, r.y, PACE.travel); await sleep(PACE.travel + 40);
+if (skip) return;
+const box = document.createElement('div');
+box.className = 'sel';
+box.style.cssText = `left:${r.x}px;top:${r.y}px;--c:${a.c}`;
+const t = document.createElement('span'); t.className = 't'; t.textContent = b.dataset.b;
+box.appendChild(t); layer.appendChild(box);
+box.getBoundingClientRect();
+box.style.width = r.w + 'px'; box.style.height = r.h + 'px';
+move(a, r.x + r.w, r.y + r.h, PACE.draw); await sleep(PACE.draw + 40);
+b.classList.add('done');
+done++; update();
+await sleep(PACE.hold);
+box.classList.add('out'); setTimeout(() => box.remove(), 400);
+}
+async function agentLoop(a, delay) {
+await sleep(delay);
+while (queue.length) {
+const b = queue.shift(); b._claimed = true;
+await work(a, b);
+}
+}
+function follow() {
+if (!building) return;
+const active = blocks.find(b => b._claimed && !b.classList.contains('done')) || blocks.find(b => !b.classList.contains('done'));
+if (active) {
+const max = document.documentElement.scrollHeight - innerHeight;
+const target = Math.min(max, Math.max(0, scrollY + active.getBoundingClientRect().top - innerHeight * 0.3));
+if (target > scrollY + 1) scrollTo(0, scrollY + (target - scrollY) * PACE.follow);
+}
+requestAnimationFrame(follow);
+}
+async function finale() {
+const r = rel($('contactTitle'));
+const cx = r.x + r.w / 2, cy = r.y + r.h / 2;
+const rad = Math.min(150, innerWidth * 0.32);
+agents.forEach((a, i) => { const ang = i / agents.length * Math.PI * 2; move(a, cx + Math.cos(ang) * rad, cy + Math.sin(ang) * rad * .6, 700); });
+await sleep(720);
+const t0 = performance.now();
+await new Promise(res => {
+const spin = now => {
+const t = now - t0;
+agents.forEach((a, i) => {
+const ang = i / agents.length * Math.PI * 2 + t * 0.0035;
+const rr = rad * (1 - Math.min(1, t / 2400) * 0.55);
+move(a, cx + Math.cos(ang) * rr, cy + Math.sin(ang) * rr * .6, 0);
+});
+t < 2400 ? requestAnimationFrame(spin) : res();
+};
+requestAnimationFrame(spin);
+});
+agents.forEach(a => a.el.style.opacity = 0);
+}
+async function build() {
+if (building) return;
+building = true; skip = false;
+$('build').textContent = 'Skip ⏭';
+$('state').textContent = 'building';
+blocks.forEach(b => { b.classList.remove('done'); b._claimed = false; });
+document.body.classList.add('building');
+done = 0; update();
+scrollTo(0, 0);
+await sleep(60);
+layer.style.height = document.body.scrollHeight + 'px';
+if (reduce) {
+for (const b of blocks) { b.classList.add('done'); done++; update(); await sleep(30); }
+} else {
+const cx = innerWidth / 2, cy = scrollY + innerHeight * 0.45;
+agents.forEach((a, i) => {
+move(a, cx + (Math.random() - .5) * 60, cy + (Math.random() - .5) * 60, 0);
+a.el.style.opacity = 1;
+});
+await sleep(900);
+queue = blocks.slice();
+requestAnimationFrame(follow);
+await Promise.all(agents.map((a, i) => agentLoop(a, i * PACE.stagger)));
+agents.forEach(a => a.el.style.opacity = 0);
+}
+document.body.classList.remove('building');
+building = false;
+$('state').textContent = 'built';
+$('build').textContent = '↻ Replay build';
+}
+function skipBuild() {
+skip = true; queue = [];
+blocks.forEach(b => b.classList.add('done'));
+done = blocks.length; update();
+agents.forEach(a => a.el.style.opacity = 0);
+layer.querySelectorAll('.sel').forEach(s => s.remove());
+}
+$('build').addEventListener('click', () => building ? skipBuild() : build());
+let started = false;
+const autoStart = () => { if (!started) { started = true; setTimeout(build, 350); } };
+if (document.fonts) document.fonts.ready.then(autoStart);
+setTimeout(autoStart, 1500);
+const cv = $('contours');
+function draw() {
+const p = cv.parentElement, dpr = devicePixelRatio || 1;
+const w = p.clientWidth, h = p.clientHeight;
+cv.width = w * dpr; cv.height = h * dpr;
+const g = cv.getContext('2d'); g.scale(dpr, dpr);
+const cx = w * 0.62, cy = h * 0.42;
+for (let k = 1; k <= 26; k++) {
+g.beginPath();
+for (let s = 0; s <= 120; s++) {
+const a = s / 120 * Math.PI * 2;
+const r = k * Math.max(w, h) * 0.028 * (1 + 0.16 * Math.sin(3 * a + k * 0.35) + 0.09 * Math.cos(5 * a - k * 0.22) + 0.05 * Math.sin(a + k));
+const x = cx + Math.cos(a) * r * 1.25, y = cy + Math.sin(a) * r;
+s ? g.lineTo(x, y) : g.moveTo(x, y);
+}
+g.closePath();
+const idx = k % 5 === 0;
+g.strokeStyle = idx ? 'rgba(22,9,10,.75)' : 'rgba(22,9,10,.32)';
+g.lineWidth = idx ? 1.8 : 0.9;
+g.stroke();
+}
+g.fillStyle = 'rgba(22,9,10,.85)';
+g.font = '600 10px "IBM Plex Mono", monospace';
+g.beginPath(); g.arc(cx, cy, 3, 0, Math.PI * 2); g.fill();
+g.fillText('EL 102.50', cx + 8, cy - 6);
+}
+draw();
+addEventListener('resize', () => { if (!building) draw(); });
+document.fonts && document.fonts.ready.then(draw);
+})();
+</script>
+</body>
+</html>
