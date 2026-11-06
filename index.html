@@ -118,7 +118,7 @@ a{color:inherit}
 .email{font:600 15px var(--f-mono);user-select:all;padding:11px 14px;border:1px solid var(--line);background:var(--panel);overflow-wrap:anywhere}
 .foot{margin-top:40px;font:500 11px var(--f-mono);color:var(--muted);letter-spacing:.06em}
 #layer{position:absolute;left:0;top:0;width:100%;pointer-events:none;z-index:50;overflow:hidden}
-.cur{display:none!important;position:absolute;left:0;top:0;width:22px;height:26px;opacity:0;will-change:transform;filter:drop-shadow(0 0 6px var(--c))}
+.cur{position:absolute;left:0;top:0;width:44px;height:44px;margin:-22px 0 0 -22px;opacity:0;will-change:transform;filter:drop-shadow(0 0 6px var(--c))}
 .cur svg{display:block}
 .sel{position:absolute;width:0;height:0;border:1px solid var(--c);background:color-mix(in srgb,var(--c) 14%,transparent);transition:width var(--draw,1.4s) cubic-bezier(.5,0,.2,1),height var(--draw,1.4s) cubic-bezier(.5,0,.2,1),opacity .5s}
 .sel::before,.sel::after{content:"";position:absolute;width:6px;height:6px;background:var(--bg);border:1px solid var(--c)}
@@ -301,9 +301,9 @@ a{color:inherit}
 <script>
 (() => {
 const COLORS = ['#36b6ff','#9be15d','#ffd23f','#ff6fb5','#b48cff','#ff9f43'];
-const PACE = { travel: 1400, draw: 1250, hold: 950, stagger: 550, follow: 0.04 };
+const PACE = { travel: 950, draw: 900, hold: 650, stagger: 380, follow: 0.055 };
 document.documentElement.style.setProperty('--draw', PACE.draw + 'ms');
-const ARROW = c => `<svg width="22" height="26" viewBox="0 0 22 26"><path d="M2 2 L2 21 L7.5 16 L11.5 24 L15 22.5 L11 14.8 L18 14.8 Z" fill="${c}" stroke="#05070a" stroke-width="1.6" stroke-linejoin="round"/></svg>`;
+const ARROW = c => `<svg width="44" height="44" viewBox="0 0 44 44"><g stroke="${c}" stroke-width="1.3" fill="none" shape-rendering="crispEdges"><line x1="0" y1="22" x2="44" y2="22"/><line x1="22" y1="0" x2="22" y2="44"/><rect x="18" y="18" width="8" height="8"/></g></svg>`;
 const layer = document.getElementById('layer');
 const blocks = [...document.querySelectorAll('[data-b]')];
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -335,7 +335,7 @@ a.el.style.transform = `translate(${x}px,${y}px)`;
 }
 async function work(a, b) {
 const r = rel(b);
-move(a, r.x - 3, r.y - 3, PACE.travel); await sleep(PACE.travel + 40);
+move(a, r.x, r.y, PACE.travel); await sleep(PACE.travel + 40);
 if (skip) return;
 const box = document.createElement('div');
 box.className = 'sel';
@@ -344,7 +344,7 @@ const t = document.createElement('span'); t.className = 't'; t.textContent = b.d
 box.appendChild(t); layer.appendChild(box);
 box.getBoundingClientRect();
 box.style.width = r.w + 'px'; box.style.height = r.h + 'px';
-move(a, r.x + r.w - 4, r.y + r.h - 4, PACE.draw); await sleep(PACE.draw + 40);
+move(a, r.x + r.w, r.y + r.h, PACE.draw); await sleep(PACE.draw + 40);
 b.classList.add('done');
 done++; update();
 await sleep(PACE.hold);
@@ -407,10 +407,11 @@ agents.forEach((a, i) => {
 move(a, cx + (Math.random() - .5) * 60, cy + (Math.random() - .5) * 60, 0);
 a.el.style.opacity = 1;
 });
-await sleep(1400);
+await sleep(900);
 queue = blocks.slice();
 requestAnimationFrame(follow);
 await Promise.all(agents.map((a, i) => agentLoop(a, i * PACE.stagger)));
+agents.forEach(a => a.el.style.opacity = 0);
 }
 document.body.classList.remove('building');
 building = false;
